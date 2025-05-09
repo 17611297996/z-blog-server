@@ -1,0 +1,6 @@
+2025-04-29 23:59:59,955 INFO 61577 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 86400059ms at 2025-05-01 00:00:00.014
+2025-04-29 23:59:59,958 INFO 61583 [Job#17459423999357191149054821576] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js executing by app
+2025-04-29 23:59:59,991 INFO 61583 [Job#17459423999357191149054821576] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js execute succeed, used 30ms. 
+2025-04-30 00:00:00,394 INFO 61577 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 86400611ms at 2025-05-01 00:00:01.005
+2025-04-30 00:00:00,392 INFO 61583 [Job#17459424003877191153566793596] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js executing by app
+2025-04-30 00:00:00,399 INFO 61583 [Job#17459424003877191153566793596] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js execute succeed, used 7ms. 

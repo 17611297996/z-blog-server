@@ -1,0 +1,306 @@
+{
+  "keys": "/Users/zuohuaihan/Desktop/归档/my-egg-project/config/config.default.js",
+  "middleware": "/Users/zuohuaihan/Desktop/归档/my-egg-project/config/config.default.js",
+  "static": {
+    "prefix": "/Users/zuohuaihan/Desktop/归档/my-egg-project/config/config.default.js",
+    "dir": "/Users/zuohuaihan/Desktop/归档/my-egg-project/config/config.default.js",
+    "dynamic": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-static/config/config.default.js",
+    "preload": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-static/config/config.default.js",
+    "buffer": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-static/config/config.default.js",
+    "maxFiles": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-static/config/config.default.js"
+  },
+  "session": {
+    "maxAge": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-session/config/config.default.js",
+    "key": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-session/config/config.default.js",
+    "httpOnly": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-session/config/config.default.js",
+    "encrypt": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-session/config/config.default.js",
+    "logValue": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-session/config/config.default.js"
+  },
+  "security": {
+    "domainWhiteList": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+    "protocolWhiteList": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+    "defaultMiddleware": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+    "csrf": {
+      "enable": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "type": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "ignoreJSON": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "useSession": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "cookieName": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "sessionName": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "headerName": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "bodyName": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "queryName": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "rotateWhenInvalid": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "supportedRequests": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "refererWhiteList": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "cookieOptions": {
+        "signed": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js"
+      }
+    },
+    "xframe": {
+      "enable": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js"
+    },
+    "hsts": {
+      "enable": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.local.js",
+      "maxAge": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "includeSubdomains": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js"
+    },
+    "dta": {
+      "enable": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js"
+    },
+    "noopen": {
+      "enable": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js"
+    },
+    "nosniff": {
+      "enable": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js"
+    },
+    "xssProtection": {
+      "enable": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js"
+    },
+    "csp": {
+      "enable": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "policy": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "ipExceptionList": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "hostnameExceptionList": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js",
+      "checkAddress": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js"
+    }
+  },
+  "helper": {
+    "shtml": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/config.default.js"
+  },
+  "jsonp": {
+    "limit": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-jsonp/config/config.default.js",
+    "callback": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-jsonp/config/config.default.js",
+    "csrf": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-jsonp/config/config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-onerror/config/config.default.js",
+    "appErrorFilter": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-onerror/config/config.default.js",
+    "templatePath": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-onerror/config/config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-i18n/config/config.default.js",
+    "dirs": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-i18n/config/config.default.js",
+    "queryField": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-i18n/config/config.default.js",
+    "cookieField": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-i18n/config/config.default.js",
+    "cookieDomain": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-i18n/config/config.default.js",
+    "cookieMaxAge": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-i18n/config/config.default.js"
+  },
+  "watcher": {
+    "type": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-watcher/config/config.local.js",
+    "eventSources": {
+      "default": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-watcher/config/config.default.js",
+      "development": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-watcher/config/config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-schedule/config/config.default.js",
+      "file": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-schedule/config/config.default.js"
+    }
+  },
+  "schedule": {
+    "directory": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-schedule/config/config.default.js"
+  },
+  "multipart": {
+    "mode": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/config/config.default.js",
+    "autoFields": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/config/config.default.js",
+    "defaultCharset": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/config/config.default.js",
+    "defaultParamCharset": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/config/config.default.js",
+    "fieldNameSize": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/config/config.default.js",
+    "fieldSize": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/config/config.default.js",
+    "fields": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/config/config.default.js",
+    "fileSize": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/config/config.default.js",
+    "files": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/config/config.default.js",
+    "fileExtensions": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/config/config.default.js",
+    "whitelist": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/config/config.default.js",
+    "allowArrayField": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/config/config.default.js",
+    "tmpdir": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/config/config.default.js",
+    "cleanSchedule": {
+      "cron": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/config/config.default.js",
+      "disable": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/config/config.default.js"
+    }
+  },
+  "development": {
+    "watchDirs": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-development/config/config.default.js",
+    "ignoreDirs": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-development/config/config.default.js",
+    "fastReady": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-development/config/config.default.js",
+    "reloadOnDebug": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-development/config/config.default.js",
+    "overrideDefault": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-development/config/config.default.js",
+    "overrideIgnore": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-development/config/config.default.js"
+  },
+  "logrotator": {
+    "filesRotateByHour": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/config/config.default.js",
+    "hourDelimiter": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/config/config.default.js",
+    "filesRotateBySize": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/config/config.default.js",
+    "maxFileSize": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/config/config.default.js",
+    "maxFiles": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/config/config.default.js",
+    "rotateDuration": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/config/config.default.js",
+    "maxDays": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/config/config.default.js"
+  },
+  "view": {
+    "root": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-view/config/config.default.js",
+    "cache": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-view/config/config.local.js",
+    "defaultExtension": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-view/config/config.default.js",
+    "defaultViewEngine": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-view/config/config.default.js",
+    "mapping": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-view/config/config.default.js"
+  },
+  "env": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+  "name": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+  "cookies": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+  "proxy": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+  "maxIpsCount": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+  "maxProxyCount": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+  "protocolHeaders": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+  "ipHeaders": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+  "hostHeaders": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+  "pkg": {
+    "name": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "version": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "description": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "private": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "egg": {
+      "declarations": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+    },
+    "dependencies": {
+      "egg": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "egg-scripts": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "js-yaml": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "markdown-it": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+    },
+    "devDependencies": {
+      "egg-bin": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "egg-mock": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "eslint": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "eslint-config-egg": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+    },
+    "engines": {
+      "node": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+    },
+    "scripts": {
+      "start": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "stop": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "dev": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "test": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "test:local": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "cov": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "lint": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "ci": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+    },
+    "repository": {
+      "type": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "url": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+    },
+    "author": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "license": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+  },
+  "baseDir": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+  "HOME": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+  "rundir": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+  "dump": {
+    "ignore": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "timing": {
+      "slowBootActionMinDuration": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+    }
+  },
+  "confusedConfigurations": {
+    "bodyparser": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "notFound": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "sitefile": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "middlewares": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "httpClient": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "cacheControl": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+  },
+  "bodyParser": {
+    "enable": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "formLimit": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "jsonLimit": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "textLimit": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "strict": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "queryString": {
+      "arrayLimit": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "depth": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "parameterLimit": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+    },
+    "onerror": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+  },
+  "logger": {
+    "dir": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "env": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "level": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "consoleLevel": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "disableConsoleAfterReady": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "outputJSON": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "buffer": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "appLogName": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "coreLogName": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "agentLogName": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "errorLogName": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "coreLogger": {
+      "consoleLevel": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.local.js"
+    },
+    "allowDebugAtProd": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "enablePerformanceTimer": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "enableFastContextLogger": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "dnsCacheLookupInterval": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "dnsCacheMaxLength": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "request": {
+      "timeout": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+    },
+    "useHttpClientNext": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+  },
+  "meta": {
+    "enable": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "logging": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+  },
+  "coreMiddleware": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+  "workerStartTimeout": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+  "serverTimeout": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "port": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+      "hostname": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+    }
+  },
+  "clusterClient": {
+    "maxWaitTime": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js",
+    "responseTimeout": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+  },
+  "onClientError": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/config.default.js"
+}

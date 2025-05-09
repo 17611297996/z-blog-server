@@ -1,0 +1,120 @@
+2025-05-09 00:12:50,339 INFO 61577 [egg-logrotator] agent logger reload: got log-reload message
+2025-05-09 02:13:04,888 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 7214693ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-09 04:13:19,333 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 7214076ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-09 06:13:33,693 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 7212788ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-09 07:30:20,661 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 4606747ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-09 08:25:57,572 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 3336640ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-09 09:31:27,319 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 3929426ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-09 09:39:42,358 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 494513ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-09 10:32:33,390 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 3150480ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-09 11:33:40,030 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 3646282ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-09 12:34:48,656 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 3648440ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-09 13:35:56,249 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 3647261ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-09 14:33:49,497 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 3452984ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-09 14:36:59,710 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 190167ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-09 14:41:09,067 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 228998ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-09 18:36:46,804 WARN 61577 [agent:development] reload worker because /Users/zuohuaihan/Desktop/归档/my-egg-project/app/server/fs.js change
+2025-05-09 18:36:46,584 INFO 61577 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/my-egg-project/app/router.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":14219879,"size":378,"blocks":8,"atimeMs":1745403552822.3547,"mtimeMs":1745403551837.9316,"ctimeMs":1745403551837.9316,"birthtimeMs":1745233603828.9717,"atime":"2025-04-23T10:19:12.822Z","mtime":"2025-04-23T10:19:11.838Z","ctime":"2025-04-23T10:19:11.838Z","birthtime":"2025-04-21T11:06:43.829Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-09 18:36:46,596 INFO 61577 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/my-egg-project/config/config.default.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":14219880,"size":715,"blocks":8,"atimeMs":1745234140046.519,"mtimeMs":1745234138932.705,"ctimeMs":1745234138932.705,"birthtimeMs":1745233603829.371,"atime":"2025-04-21T11:15:40.047Z","mtime":"2025-04-21T11:15:38.933Z","ctime":"2025-04-21T11:15:38.933Z","birthtime":"2025-04-21T11:06:43.829Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-09 18:36:46,597 INFO 61577 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/my-egg-project/config/plugin.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":14219881,"size":116,"blocks":8,"atimeMs":1745233605131.0308,"mtimeMs":1745233603829.9954,"ctimeMs":1745233603829.9954,"birthtimeMs":1745233603829.8943,"atime":"2025-04-21T11:06:45.131Z","mtime":"2025-04-21T11:06:43.830Z","ctime":"2025-04-21T11:06:43.830Z","birthtime":"2025-04-21T11:06:43.830Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-09 18:36:46,599 INFO 61577 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/my-egg-project/app/controller/home.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":14219883,"size":192,"blocks":8,"atimeMs":1745233605629.454,"mtimeMs":1745233603830.5557,"ctimeMs":1745233603830.5557,"birthtimeMs":1745233603830.445,"atime":"2025-04-21T11:06:45.629Z","mtime":"2025-04-21T11:06:43.831Z","ctime":"2025-04-21T11:06:43.831Z","birthtime":"2025-04-21T11:06:43.830Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-09 18:36:46,601 INFO 61577 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/my-egg-project/app/controller/article.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":14263125,"size":5256,"blocks":16,"atimeMs":1745404661130.1235,"mtimeMs":1745404659986.1238,"ctimeMs":1745404659986.1238,"birthtimeMs":1745233823092.8904,"atime":"2025-04-23T10:37:41.130Z","mtime":"2025-04-23T10:37:39.986Z","ctime":"2025-04-23T10:37:39.986Z","birthtime":"2025-04-21T11:10:23.093Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-09 18:36:46,602 INFO 61577 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/my-egg-project/app/server/fs.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":14263348,"size":616,"blocks":8,"atimeMs":1745307062070.1536,"mtimeMs":1745307061000.2837,"ctimeMs":1745307061000.2837,"birthtimeMs":1745233866600.184,"atime":"2025-04-22T07:31:02.070Z","mtime":"2025-04-22T07:31:01.000Z","ctime":"2025-04-22T07:31:01.000Z","birthtime":"2025-04-21T11:11:06.600Z"},"remove":false,"isDirectory":false,"isFile":true}

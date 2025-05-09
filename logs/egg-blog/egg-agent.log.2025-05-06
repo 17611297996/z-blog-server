@@ -1,0 +1,65 @@
+2025-05-06 14:41:13,371 INFO 61577 [egg-logrotator] agent logger reload: got log-reload message
+2025-05-06 19:41:25,460 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 930070ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-06 21:25:08,815 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 6066549ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-06 21:41:50,834 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 938692ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-06 21:59:22,643 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 938627ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-06 22:26:14,953 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 1428849ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-06 22:43:48,678 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 940068ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-06 22:54:19,836 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 519719ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-07 00:56:01,095 ERROR 61577 nodejs.ClusterClientNoResponseError: client no response in 7217129ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 61577
+hostname: zuohuaihandeMacBook-Pro.local
+

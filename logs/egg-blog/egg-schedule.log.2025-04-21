@@ -1,0 +1,126 @@
+2025-04-21 19:09:53,530 INFO 15373 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 33606473ms at 2025-04-22 04:30:00.003
+2025-04-21 19:09:53,530 INFO 15373 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 17406470ms at 2025-04-22 00:00:00.000
+2025-04-21 19:09:53,530 INFO 15373 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 17407470ms at 2025-04-22 00:00:01.000
+2025-04-21 19:09:53,436 INFO 15374 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:09:53,437 INFO 15374 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:09:53,437 INFO 15374 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:10:24,405 INFO 15428 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:10:24,406 INFO 15428 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:10:24,406 INFO 15428 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:10:28,617 INFO 15439 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:10:28,618 INFO 15439 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:10:28,618 INFO 15439 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:10:29,268 INFO 15441 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:10:29,268 INFO 15441 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:10:29,268 INFO 15441 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:11:07,462 INFO 15479 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:11:07,462 INFO 15479 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:11:07,462 INFO 15479 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:11:08,707 INFO 15483 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:11:08,707 INFO 15483 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:11:08,707 INFO 15483 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:11:09,386 INFO 15487 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:11:09,387 INFO 15487 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:11:09,387 INFO 15487 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:11:36,236 INFO 15520 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:11:36,236 INFO 15520 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:11:36,236 INFO 15520 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:11:36,821 INFO 15521 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:11:36,821 INFO 15521 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:11:36,821 INFO 15521 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:12:02,313 INFO 15553 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:12:02,313 INFO 15553 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:12:02,313 INFO 15553 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:12:30,250 INFO 15586 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:12:30,250 INFO 15586 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:12:30,250 INFO 15586 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:15:40,177 INFO 15774 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:15:40,178 INFO 15774 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:15:40,178 INFO 15774 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:15:53,165 INFO 15852 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 33246837ms at 2025-04-22 04:30:00.002
+2025-04-21 19:15:53,165 INFO 15852 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 17046835ms at 2025-04-22 00:00:00.000
+2025-04-21 19:15:53,165 INFO 15852 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 17047835ms at 2025-04-22 00:00:01.000
+2025-04-21 19:15:53,088 INFO 15853 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:15:53,088 INFO 15853 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:15:53,088 INFO 15853 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:20:50,989 INFO 16498 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 32949013ms at 2025-04-22 04:30:00.002
+2025-04-21 19:20:50,990 INFO 16498 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 16749010ms at 2025-04-22 00:00:00.000
+2025-04-21 19:20:50,990 INFO 16498 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 16750010ms at 2025-04-22 00:00:01.000
+2025-04-21 19:20:50,834 INFO 16499 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:20:50,834 INFO 16499 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:20:50,834 INFO 16499 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:25:22,536 INFO 16953 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 32677467ms at 2025-04-22 04:30:00.002
+2025-04-21 19:25:22,536 INFO 16953 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 16477464ms at 2025-04-22 00:00:00.000
+2025-04-21 19:25:22,536 INFO 16953 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 16478464ms at 2025-04-22 00:00:01.000
+2025-04-21 19:25:22,431 INFO 16957 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:25:22,431 INFO 16957 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:25:22,431 INFO 16957 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:27:50,738 INFO 17091 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:27:50,738 INFO 17091 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:27:50,738 INFO 17091 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:28:03,055 INFO 17123 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:28:03,056 INFO 17123 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:28:03,056 INFO 17123 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:29:30,440 INFO 17215 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:29:30,440 INFO 17215 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:29:30,440 INFO 17215 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:30:32,246 INFO 17279 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:30:32,246 INFO 17279 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:30:32,246 INFO 17279 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:30:39,578 INFO 17340 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 32360425ms at 2025-04-22 04:30:00.003
+2025-04-21 19:30:39,579 INFO 17340 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 16160421ms at 2025-04-22 00:00:00.000
+2025-04-21 19:30:39,579 INFO 17340 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 16161421ms at 2025-04-22 00:00:01.000
+2025-04-21 19:30:39,477 INFO 17341 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:30:39,477 INFO 17341 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:30:39,477 INFO 17341 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:33:01,621 INFO 17472 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:33:01,621 INFO 17472 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:33:01,621 INFO 17472 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:33:12,347 INFO 17537 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 32207656ms at 2025-04-22 04:30:00.003
+2025-04-21 19:33:12,348 INFO 17537 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 16007653ms at 2025-04-22 00:00:00.001
+2025-04-21 19:33:12,348 INFO 17537 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 16008652ms at 2025-04-22 00:00:01.000
+2025-04-21 19:33:12,245 INFO 17538 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:33:12,245 INFO 17538 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:33:12,245 INFO 17538 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:35:38,220 INFO 17745 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 32061782ms at 2025-04-22 04:30:00.002
+2025-04-21 19:35:38,220 INFO 17745 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 15861780ms at 2025-04-22 00:00:00.000
+2025-04-21 19:35:38,220 INFO 17745 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 15862780ms at 2025-04-22 00:00:01.000
+2025-04-21 19:35:38,066 INFO 17749 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:35:38,067 INFO 17749 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:35:38,067 INFO 17749 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 19:41:23,005 INFO 18109 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 31716998ms at 2025-04-22 04:30:00.003
+2025-04-21 19:41:23,005 INFO 18109 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 15516995ms at 2025-04-22 00:00:00.000
+2025-04-21 19:41:23,005 INFO 18109 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 15517995ms at 2025-04-22 00:00:01.000
+2025-04-21 19:41:22,829 INFO 18112 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 19:41:22,829 INFO 18112 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 19:41:22,829 INFO 18112 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 20:00:45,751 INFO 19011 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 30554252ms at 2025-04-22 04:30:00.003
+2025-04-21 20:00:45,751 INFO 19011 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 14354249ms at 2025-04-22 00:00:00.000
+2025-04-21 20:00:45,752 INFO 19011 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 14355249ms at 2025-04-22 00:00:01.001
+2025-04-21 20:00:45,562 INFO 19012 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 20:00:45,562 INFO 19012 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 20:00:45,562 INFO 19012 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 20:02:07,585 INFO 19099 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 20:02:07,586 INFO 19099 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 20:02:07,586 INFO 19099 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 20:02:17,053 INFO 19163 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 30462950ms at 2025-04-22 04:30:00.003
+2025-04-21 20:02:17,053 INFO 19163 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 14262947ms at 2025-04-22 00:00:00.000
+2025-04-21 20:02:17,053 INFO 19163 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 14263947ms at 2025-04-22 00:00:01.000
+2025-04-21 20:02:16,976 INFO 19164 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 20:02:16,976 INFO 19164 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 20:02:16,976 INFO 19164 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 20:04:46,853 INFO 19299 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 20:04:46,853 INFO 19299 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 20:04:46,853 INFO 19299 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-21 20:04:55,008 INFO 19362 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 30304995ms at 2025-04-22 04:30:00.002
+2025-04-21 20:04:55,008 INFO 19362 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 14104992ms at 2025-04-22 00:00:00.000
+2025-04-21 20:04:55,008 INFO 19362 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 14105992ms at 2025-04-22 00:00:01.000
+2025-04-21 20:04:54,931 INFO 19363 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-04-21 20:04:54,932 INFO 19363 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-04-21 20:04:54,932 INFO 19363 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-04-22 00:09:45,886 INFO 19363 [Job#1745251785864284959035897581] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js executing by app
+2025-04-22 00:09:45,890 INFO 19363 [Job#1745251785877284959152311821] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js executing by app
+2025-04-22 00:09:45,904 INFO 19363 [Job#1745251785864284959035897581] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js execute succeed, used 16ms. 
+2025-04-22 00:09:45,918 INFO 19363 [Job#1745251785877284959152311821] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js execute succeed, used 28ms. 
+2025-04-22 00:09:45,872 INFO 19362 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 85814133ms at 2025-04-23 00:00:00.005
+2025-04-22 00:09:45,883 INFO 19362 [Timer] /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 85815123ms at 2025-04-23 00:00:01.006

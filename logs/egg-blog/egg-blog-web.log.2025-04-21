@@ -1,0 +1,31 @@
+2025-04-21 19:21:02,793 ERROR 16499 [-/127.0.0.1/-/8ms GET /api/markdown-files] nodejs.ReferenceError: app is not defined
+    at ArticleController.getFiles (/Users/zuohuaihan/Desktop/归档/my-egg-project/app/controller/article.js:7:28)
+    at Object.callFn (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/@eggjs/router/lib/utils.js:17:21)
+    at wrappedController (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/@eggjs/router/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/@eggjs/router/node_modules/koa-compose/index.js:45:18)
+    at /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/@eggjs/router/node_modules/koa-compose/index.js:44:32)
+    at /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/@eggjs/router/node_modules/koa-compose/index.js:36:12
+
+pid: 16499
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-04-21 19:28:49,625 WARN 17123 [-/127.0.0.1/-/2ms POST /api/markdown-files] missing csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2025-04-21 19:28:49,626 WARN 17123 [-/127.0.0.1/-/4ms POST /api/markdown-files] nodejs.ForbiddenError: missing csrf token
+    at Object.throw (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/app/extend/context.js:165:32)
+    at csrf (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/lib/middlewares/csrf.js:37:9)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/koa-compose/index.js:42:32)
+    at /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/koa-compose/index.js:42:32)
+message: "missing csrf token"
+pid: 17123
+hostname: zuohuaihandeMacBook-Pro.local
+
