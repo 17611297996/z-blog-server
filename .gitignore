@@ -3,6 +3,8 @@ bin-debug/
 bin-release/
 [Oo]bj/
 [Bb]in/
+pnpm-lock.yaml  # 禁止pnpm锁文件进入仓库:ml-citation{ref="5" data="citationList"}
+node_modules/
 
 # Other files and folders
 .settings/
