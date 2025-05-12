@@ -9,13 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 检出仓库代码
+      - name: 检出代码
         uses: actions/checkout@v4
 
-      - name: 调试-列出仓库文件
-        run: ls -la $GITHUB_WORKSPACE
-
-      - name: 设置SSH环境
+      - name: 设置 SSH 环境
         run: |
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
@@ -23,26 +20,22 @@ jobs:
           chmod 600 ~/.ssh/github_actions_key
           ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-      - name: 安装Rsync工具
+      - name: 安装依赖工具
         run: sudo apt-get update && sudo apt-get install -y rsync
 
       - name: 同步文件到服务器
         run: |
           rsync -avz --progress --delete \
             --exclude='.git' \
-            --exclude='.env.local' \
+            --exclude='.env' \
             --exclude='node_modules/' \
-            --exclude='.idea/' \
-            --exclude='.vscode/' \
             --exclude='*.log' \
-            --exclude='.github' \
-            --exclude='.DS_Store' \
-            --exclude='.gitignore' \
+            --exclude='.github/workflows/' \
             -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
             $GITHUB_WORKSPACE/ \
             ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
 
-      - name: 调试-列出目标目录文件
+      - name: 验证部署结果
         run: |
           ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-            "ls -la /www/wwwroot/egg-blog"
+            "cd /www/wwwroot/egg-blog && git rev-parse HEAD && ls -l"
