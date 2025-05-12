@@ -23,20 +23,4 @@ jobs:
         echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/github_actions_key
         chmod 600 ~/.ssh/github_actions_key
         # 添加服务器指纹到 known_hosts (避免首次连接确认)
-        ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_IP }} >> ~/.ssh/known_hosts
-
-    - name: Install Rsync
-      run: sudo apt-get update && sudo apt-get install -y rsync  # 确保 Runner 有 rsync 工具
-
-    - name: Create and Fix Permissions on Target Directory
-      run: |
-        # 创建目标目录并修改权限
-        ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_IP }} \
-          "sudo mkdir -p /www/wwwroot/egg-blog && sudo chmod -R 777 /www/wwwroot/egg-blog"
-
-    - name: Sync Files via Rsync to egg-blog
-      run: |
-        rsync -avz --progress --delete \
-          -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
-          $GITHUB_WORKSPACE/ \
-          ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_IP }}:/www/wwwroot/egg-blog/
+        ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
