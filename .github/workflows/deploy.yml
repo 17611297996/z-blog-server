@@ -15,7 +15,7 @@ jobs:
       - name: 调试-列出仓库文件
         run: ls -la $GITHUB_WORKSPACE
 
-      - name: 设置 SSH 环境
+      - name: 设置SSH环境
         run: |
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
@@ -23,7 +23,7 @@ jobs:
           chmod 600 ~/.ssh/github_actions_key
           ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-      - name: 安装 Rsync 工具
+      - name: 安装Rsync工具
         run: sudo apt-get update && sudo apt-get install -y rsync
 
       - name: 同步文件到服务器
