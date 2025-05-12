@@ -1,51 +1,45 @@
-# 工作流名称：部署到服务器
 name: 部署到服务器
 
-# 触发事件：当主分支有推送时触发
 on:
-    push:
-        branches: ['main']
+  push:
+    branches: ['main']
 
 jobs:
-    deploy:
-        # 运行环境：使用最新的Ubuntu系统
-        runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
-        steps:
-            # 步骤1：检出代码
-            - name: 检出仓库代码
-              uses: actions/checkout@v4 # 使用GitHub官方的Checkout动作，正确拉取代码到Runner的工作目录
+    steps:
+      - name: 检出仓库代码
+        uses: actions/checkout@v4
 
-            # 步骤2：调试-列出仓库文件
-            - name: 调试-列出仓库文件
-              run: ls -la $GITHUB_WORKSPACE # 列出工作目录中的文件，确认代码是否正确检出
+      - name: 调试-列出仓库文件
+        run: ls -la $GITHUB_WORKSPACE
 
-            # 步骤3：设置SSH环境
-            - name: 设置SSH环境
-              run: |
-                  mkdir -p ~/.ssh  # 创建.ssh目录
-                  chmod 700 ~/.ssh  # 设置目录权限为700
-                  # 注入SSH私钥（必须为OpenSSH格式，无多余换行符）
-                  echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/github_actions_key
-                  chmod 600 ~/.ssh/github_actions_key  # 设置私钥文件权限为600
-                  # 添加服务器指纹到known_hosts（避免首次连接确认）
-                  ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+      - name: 设置 SSH 环境
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/github_actions_key
+          chmod 600 ~/.ssh/github_actions_key
+          ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-            # 步骤4：安装Rsync工具
-            - name: 安装Rsync工具
-              run: sudo apt-get update && sudo apt-get install -y rsync # 确保Runner安装了rsync工具，用于后续文件同步
+      - name: 安装 Rsync 工具
+        run: sudo apt-get update && sudo apt-get install -y rsync
 
-            # 步骤5：同步文件到服务器
-            - name: 同步文件到服务器
-              run: |
-                  rsync -avz --progress --delete \
-                    -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
-                    $GITHUB_WORKSPACE/ \
-                    ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
+      - name: 同步文件到服务器
+        run: |
+          rsync -avz --progress --delete \
+            --exclude='.git' \
+            --exclude='.env.local' \
+            --exclude='node_modules/' \
+            --exclude='.idea/' \
+            --exclude='.vscode/' \
+            --exclude='*.log' \
+            -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
+            $GITHUB_WORKSPACE/ \
+            ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
 
-            # 步骤6：调试-列出目标目录文件
-            - name: 调试-列出目标目录文件
-              run: |
-                  # 通过SSH连接到服务器，并列出目标目录中的文件
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                    "ls -la /www/wwwroot/egg-blog"
+      - name: 调试-列出目标目录文件
+        run: |
+          ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+            "ls -la /www/wwwroot/egg-blog"
