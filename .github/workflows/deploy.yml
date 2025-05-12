@@ -32,7 +32,11 @@ jobs:
     - name: 安装rsync
       run: sudo apt-get update && sudo apt-get install -y rsync
 
-    # 步骤 5: 同步代码到服务器
+    # 步骤 5: 调试-列出当前目录文件
+    - name: 调试-列出当前目录文件
+      run: ls -la
+
+    # 步骤 6: 同步代码到服务器
     - name: 同步代码到服务器
       run: |
         rsync -avz --progress --delete \
@@ -41,4 +45,4 @@ jobs:
           --exclude='.env.local' \      # 排除本地环境变量（可选）
           -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
           ./ \                          # 当前目录（仓库根目录）作为源
-          ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_PORT }}:/www/wwwroot/egg-blog/  # 目标路径
+          ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
