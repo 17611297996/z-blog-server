@@ -28,11 +28,6 @@ jobs:
     - name: Install Rsync
       run: sudo apt-get update && sudo apt-get install -y rsync  # 确保 Runner 有 rsync 工具
 
-    - name: Create and Fix Permissions on Target Directory
-      run: |
-        # 创建目标目录并修改权限
-        ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-          "mkdir -p /www/wwwroot/egg-blog && chmod -R 777 /www/wwwroot/egg-blog"
 
     - name: Sync Files via Rsync to egg-blog
       run: |
