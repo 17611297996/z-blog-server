@@ -12,11 +12,11 @@ jobs:
     - name: 检出代码
       uses: actions/checkout@v4
 
-    - name: 清理Git元数据
+    - name: 调试-列出仓库文件
       run: |
-        # 删除.git目录和残留文件
-        rm -rf .git
-        find . -name '.git*' -exec rm -rf {} +
+        echo "当前工作目录: $GITHUB_WORKSPACE"
+        ls -la $GITHUB_WORKSPACE
+        find $GITHUB_WORKSPACE -type f ! -name '.*'
 
     - name: 配置SSH环境
       run: |
@@ -29,31 +29,20 @@ jobs:
     - name: 安装Rsync
       run: sudo apt-get update && sudo apt-get install -y rsync
 
-    - name: 预同步目录结构
+    - name: 同步文件到服务器
       run: |
-        rsync -avzvv --progress \
-          --include='*/' \
-          --exclude='*' \
-          -e "ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }}" \
-          ./ \
-          ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
+        rsync -avzvv --progress --delete \
+          --include='*' \                   # 强制包含所有文件
+          --exclude='node_modules' \        # 再排除特定目录
+          --exclude='.git' \
+          --copy-links \
+          -e "ssh -vvv -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
+          $GITHUB_WORKSPACE/ \
+          ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/ \
+          > rsync-debug.log 2>&1
+        cat rsync-debug.log
 
-    - name: 智能同步核心文件
-      run: |
-        rsync -avzvv --delay-updates --progress --delete \
-          --exclude='node_modules/' \
-          --exclude='.git/' \
-          --exclude='.github/' \
-          --filter=':- .gitignore' \
-          --chmod=D755,F644 \
-          -e "ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }}" \
-          ./ \
-          ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
-      
-    - name: 防御性权限修复
+    - name: 修复服务器权限
       run: |
         ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-          "find /www/wwwroot/egg-blog/ -type d -exec chmod 755 {} \; && \
-           find /www/wwwroot/egg-blog/ -type f -exec chmod 644 {} \; && \
-           chown -R www-data:www-data /www/wwwroot/egg-blog/ && \
-           systemctl restart nginx"
+          "chmod -R 755 /www/wwwroot/egg-blog/ && chown -R www-data:www-data /www/wwwroot/egg-blog/"
