@@ -4,3 +4,12 @@
 2025-05-09 18:36:47,936 INFO 41146 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
 2025-05-09 18:36:47,936 INFO 41146 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/clean_log.js
 2025-05-09 18:36:47,936 INFO 41146 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-05-12 18:19:09,427 INFO 66611 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg-multipart@3.5.0/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-05-12 18:19:09,427 INFO 66611 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg-logrotator@3.2.0/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-05-12 18:19:09,427 INFO 66611 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg-logrotator@3.2.0/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-05-12 18:20:28,813 INFO 66841 [Timer] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 36571189ms at 2025-05-13 04:30:00.002
+2025-05-12 18:20:28,814 INFO 66841 [Timer] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 20371187ms at 2025-05-13 00:00:00.001
+2025-05-12 18:20:28,814 INFO 66841 [Timer] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 20372186ms at 2025-05-13 00:00:01.000
+2025-05-12 18:20:28,732 INFO 66843 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-05-12 18:20:28,732 INFO 66843 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-05-12 18:20:28,732 INFO 66843 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js

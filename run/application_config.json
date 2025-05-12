@@ -107,25 +107,24 @@
     "onerror": {
       "errorPageUrl": "",
       "appErrorFilter": null,
-      "templatePath": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-onerror/lib/onerror_page.mustache"
+      "templatePath": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-onerror/lib/onerror_page.mustache"
     },
     "i18n": {
       "defaultLocale": "en_US",
       "dirs": [
-        "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-session/config/locales",
-        "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security/config/locales",
-        "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-jsonp/config/locales",
-        "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-onerror/config/locales",
-        "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-i18n/config/locales",
-        "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-watcher/config/locales",
-        "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-schedule/config/locales",
-        "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart/config/locales",
-        "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-development/config/locales",
-        "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator/config/locales",
-        "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-static/config/locales",
-        "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-view/config/locales",
-        "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/locales",
-        "/Users/zuohuaihan/Desktop/归档/my-egg-project/config/locales"
+        "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-session/config/locales",
+        "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/locales",
+        "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-jsonp/config/locales",
+        "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-onerror/config/locales",
+        "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-i18n/config/locales",
+        "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-watcher/config/locales",
+        "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-schedule/config/locales",
+        "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/config/locales",
+        "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/config/locales",
+        "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/locales",
+        "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-view/config/locales",
+        "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/locales",
+        "/Users/zuohuaihan/Desktop/归档/z-blog-server/config/locales"
       ],
       "queryField": "locale",
       "cookieField": "locale",
@@ -134,10 +133,10 @@
       "functionName": "__"
     },
     "watcher": {
-      "type": "development",
+      "type": "default",
       "eventSources": {
-        "default": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-watcher/lib/event-sources/default",
-        "development": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-watcher/lib/event-sources/development"
+        "default": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-watcher/lib/event-sources/default",
+        "development": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-watcher/lib/event-sources/development"
       }
     },
     "customLogger": {
@@ -169,14 +168,6 @@
       },
       "checkFile": "<Function anonymous>"
     },
-    "development": {
-      "watchDirs": [],
-      "ignoreDirs": [],
-      "fastReady": false,
-      "reloadOnDebug": true,
-      "overrideDefault": false,
-      "overrideIgnore": false
-    },
     "logrotator": {
       "filesRotateByHour": null,
       "hourDelimiter": "-",
@@ -188,20 +179,21 @@
     },
     "static": {
       "prefix": "/public/",
-      "dir": "/Users/zuohuaihan/Desktop/归档/my-egg-project/public",
+      "dir": "/Users/zuohuaihan/Desktop/归档/z-blog-server/public",
       "dynamic": true,
       "preload": false,
-      "buffer": false,
-      "maxFiles": 1000
+      "buffer": true,
+      "maxFiles": 1000,
+      "maxAge": 31536000
     },
     "view": {
-      "root": "/Users/zuohuaihan/Desktop/归档/my-egg-project/app/view",
-      "cache": false,
+      "root": "/Users/zuohuaihan/Desktop/归档/z-blog-server/app/view",
+      "cache": true,
       "defaultExtension": ".html",
       "defaultViewEngine": "",
       "mapping": {}
     },
-    "env": "local",
+    "env": "prod",
     "name": "egg-blog",
     "keys": "<String len: 27>",
     "cookies": {},
@@ -235,7 +227,7 @@
         "node": ">=18.0.0"
       },
       "scripts": {
-        "start": "egg-scripts start --daemon --title=egg-server-egg-blog",
+        "start": "egg-scripts start --title=node-server",
         "stop": "egg-scripts stop --title=egg-server-egg-blog",
         "dev": "egg-bin dev",
         "test": "npm run lint -- --fix && npm run test:local",
@@ -251,9 +243,9 @@
       "author": "",
       "license": "MIT"
     },
-    "baseDir": "/Users/zuohuaihan/Desktop/归档/my-egg-project",
+    "baseDir": "/Users/zuohuaihan/Desktop/归档/z-blog-server",
     "HOME": "/Users/zuohuaihan",
-    "rundir": "/Users/zuohuaihan/Desktop/归档/my-egg-project/run",
+    "rundir": "/Users/zuohuaihan/Desktop/归档/z-blog-server/run",
     "dump": {
       "ignore": "<Set>",
       "timing": {
@@ -289,21 +281,19 @@
       "returnRawBody": true
     },
     "logger": {
-      "dir": "/Users/zuohuaihan/Desktop/归档/my-egg-project/logs/egg-blog",
+      "dir": "/Users/zuohuaihan/logs/egg-blog",
       "encoding": "utf8",
-      "env": "local",
+      "env": "prod",
       "level": "INFO",
       "consoleLevel": "INFO",
-      "disableConsoleAfterReady": false,
+      "disableConsoleAfterReady": true,
       "outputJSON": false,
       "buffer": true,
       "appLogName": "egg-blog-web.log",
       "coreLogName": "egg-web.log",
       "agentLogName": "egg-agent.log",
       "errorLogName": "common-error.log",
-      "coreLogger": {
-        "consoleLevel": "WARN"
-      },
+      "coreLogger": {},
       "allowDebugAtProd": false,
       "enablePerformanceTimer": false,
       "enableFastContextLogger": false,
@@ -344,8 +334,7 @@
       "overrideMethod",
       "session",
       "securities",
-      "i18n",
-      "eggLoaderTrace"
+      "i18n"
     ],
     "workerStartTimeout": 600000,
     "serverTimeout": null,
@@ -376,8 +365,8 @@
         "jsonp"
       ],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/plugin.js",
-      "path": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-onerror",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-onerror",
       "version": "2.4.0"
     },
     "session": {
@@ -387,8 +376,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/plugin.js",
-      "path": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-session",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-session",
       "version": "3.3.0"
     },
     "i18n": {
@@ -398,8 +387,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/plugin.js",
-      "path": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-i18n",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-i18n",
       "version": "2.1.1"
     },
     "watcher": {
@@ -409,12 +398,9 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/plugin.js",
-      "path": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-watcher",
-      "version": "3.1.1",
-      "dependents": [
-        "development"
-      ]
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-watcher",
+      "version": "3.1.1"
     },
     "multipart": {
       "enable": true,
@@ -425,8 +411,8 @@
         "schedule"
       ],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/plugin.js",
-      "path": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-multipart",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart",
       "version": "3.5.0"
     },
     "security": {
@@ -438,12 +424,12 @@
         "session"
       ],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/plugin.js",
-      "path": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-security",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security",
       "version": "3.7.0"
     },
     "development": {
-      "enable": true,
+      "enable": false,
       "package": "egg-development",
       "name": "development",
       "dependencies": [
@@ -453,8 +439,8 @@
       "env": [
         "local"
       ],
-      "from": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/plugin.js",
-      "path": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-development",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-development",
       "version": "3.0.2"
     },
     "logrotator": {
@@ -466,8 +452,8 @@
       ],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/plugin.js",
-      "path": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-logrotator",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator",
       "version": "3.2.0"
     },
     "schedule": {
@@ -477,8 +463,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/plugin.js",
-      "path": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-schedule",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-schedule",
       "version": "4.0.1",
       "dependents": [
         "logrotator"
@@ -491,8 +477,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/plugin.js",
-      "path": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-static",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static",
       "version": "2.3.1"
     },
     "jsonp": {
@@ -504,8 +490,8 @@
         "security"
       ],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/plugin.js",
-      "path": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-jsonp",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-jsonp",
       "version": "2.0.0"
     },
     "view": {
@@ -515,15 +501,15 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg/config/plugin.js",
-      "path": "/Users/zuohuaihan/Desktop/归档/my-egg-project/node_modules/egg-view",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-view",
       "version": "2.1.4"
     }
   },
   "appInfo": {
     "name": "egg-blog",
-    "baseDir": "/Users/zuohuaihan/Desktop/归档/my-egg-project",
-    "env": "local",
+    "baseDir": "/Users/zuohuaihan/Desktop/归档/z-blog-server",
+    "env": "prod",
     "scope": "",
     "HOME": "/Users/zuohuaihan",
     "pkg": {
@@ -550,7 +536,7 @@
         "node": ">=18.0.0"
       },
       "scripts": {
-        "start": "egg-scripts start --daemon --title=egg-server-egg-blog",
+        "start": "egg-scripts start --title=node-server",
         "stop": "egg-scripts stop --title=egg-server-egg-blog",
         "dev": "egg-bin dev",
         "test": "npm run lint -- --fix && npm run test:local",
@@ -566,6 +552,6 @@
       "author": "",
       "license": "MIT"
     },
-    "root": "/Users/zuohuaihan/Desktop/归档/my-egg-project"
+    "root": "/Users/zuohuaihan"
   }
 }
