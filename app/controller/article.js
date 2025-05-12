@@ -44,7 +44,7 @@ class ArticleController extends Controller {
     }
     async getFiles() {
         const { ctx } = this;
-        const name = ctx.query.name; // 获取查询参数 name
+        const name = ctx.query.name; // 获取到查询参数 name
         const tag = ctx.query.tag;
         const folderPath = path.join(this.app.baseDir, 'public', 'markdownFiles');
 
