@@ -1,4 +1,4 @@
-name: 全栈部署(node服务端)
+name: 同步Node.js后端代码到服务器
 
 on:
   push:
@@ -13,29 +13,31 @@ jobs:
     - name: 检出代码
       uses: actions/checkout@v4
 
-    # 步骤 2: 配置SSH连接环境
+    # 步骤 2: 创建服务器目标目录
+    - name: 创建服务器目录
+      run: |
+        ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+          "mkdir -p /www/wwwroot/egg-blog"
+
+    # 步骤 3: 配置SSH连接环境
     - name: 配置SSH密钥
       run: |
-        # 创建SSH目录并设置权限
         mkdir -p ~/.ssh
         chmod 700 ~/.ssh
-        # 注入服务器SSH私钥（需提前在Secrets配置）
         echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/github_actions_key
         chmod 600 ~/.ssh/github_actions_key
-        # 添加服务器指纹到信任列表（避免首次连接确认）
         ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-    # 步骤 3: 安装rsync同步工具
+    # 步骤 4: 安装rsync同步工具
     - name: 安装rsync
       run: sudo apt-get update && sudo apt-get install -y rsync
 
-    # 步骤 4: 同步所有文件到服务器（排除node_modules）
-    - name: 同步代码到服务器
+    # 步骤 5: 同步代码到服务器
       run: |
         rsync -avz --progress --delete \
           --exclude='node_modules' \    # 排除包管理目录
-          --exclude='.git' \            # 排除Git版本控制文件
-          --exclude='.env.local' \      # 排除本地环境变量文件（可选）
+          --exclude='.git' \            # 排除Git元数据
+          --exclude='.env.local' \      # 排除本地环境变量（可选）
           -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
           . \                           # 当前目录（仓库根目录）作为源
-          ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/  # 服务器目标路径
+          ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/  # 目标路径
