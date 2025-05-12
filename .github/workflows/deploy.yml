@@ -12,48 +12,26 @@ jobs:
     - name: 检出代码
       uses: actions/checkout@v4
 
-    - name: 调试-工作目录和文件
-      run: |
-        echo "GitHub 工作目录: $GITHUB_WORKSPACE"
-        echo "当前目录文件列表:"
-        ls -la $GITHUB_WORKSPACE
-        echo "非隐藏文件列表:"
-        find $GITHUB_WORKSPACE -type f ! -path '*/.*'
-
     - name: 配置SSH环境
       run: |
         mkdir -p ~/.ssh
         chmod 700 ~/.ssh
+        # 注入私钥（严格检查格式）
         echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/github_actions_key
         chmod 600 ~/.ssh/github_actions_key
+        # 添加服务器指纹
         ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+
+    - name: 测试SSH连接（详细日志）
+      run: |
+        ssh -vvv -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} "echo Connection Test OK"
 
     - name: 安装Rsync
       run: sudo apt-get update && sudo apt-get install -y rsync
 
-    - name: 同步文件到服务器（文件列表调试）
-      run: |
-        cd $GITHUB_WORKSPACE
-        rsync -avn --dry-run \
-          --exclude='node_modules' \
-          --exclude='.git' \
-          ./ \
-          ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
-
     - name: 同步文件到服务器
       run: |
-        cd $GITHUB_WORKSPACE
-        rsync -avzvv --progress --delete \
-          --exclude='node_modules' \
-          --exclude='.git' \
-          --copy-links \
-          -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
-          ./ \
-          ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/ \
-          > rsync-debug.log 2>&1
-        cat rsync-debug.log
-
-    - name: 修复服务器权限
-      run: |
-        ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-          "chmod -R 755 /www/wwwroot/egg-blog/ && chown -R www-data:www-data /www/wwwroot/egg-blog/"
+        rsync -avz --progress --delete \
+          -e "ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }}" \
+          $GITHUB_WORKSPACE/ \
+          ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
