@@ -26,11 +26,13 @@ jobs:
       - name: 同步文件到服务器
         run: |
           rsync -avz --progress --delete \
-            --exclude='.git' \
-            --exclude='.env' \
+            --exclude='.git*' \
+            --exclude='.env*' \
             --exclude='node_modules/' \
             --exclude='*.log' \
-            --exclude='.github/workflows/' \
+            --exclude='.github/' \
+            --exclude='.DS_Store' \
+            --exclude='*.swp' \
             -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
             $GITHUB_WORKSPACE/ \
             ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
