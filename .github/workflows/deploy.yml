@@ -12,8 +12,11 @@ jobs:
       - name: 检出代码
         uses: actions/checkout@v4
 
-      - name: 调试-列出仓库文件
-        run: ls -la $GITHUB_WORKSPACE
+      - name: 调试-验证源路径
+        run: |
+          echo "当前工作目录: $GITHUB_WORKSPACE"
+          ls -la $GITHUB_WORKSPACE
+          find $GITHUB_WORKSPACE -type d -name "z-blog-server"
 
       - name: 设置SSH环境
         run: |
@@ -23,33 +26,29 @@ jobs:
           chmod 600 ~/.ssh/github_actions_key
           ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-      - name: 安装Rsync
-        run: sudo apt-get update && sudo apt-get install -y rsync
-
-      - name: 同步文件到服务器（增强排除规则）
-        run: |
-          rsync -avz --progress --delete \
-            --exclude='node_modules' \        # 排除依赖目录
-            --exclude='.git' \                # 排除 Git 元数据
-            --exclude='.env' \                # 排除环境变量文件
-            --exclude='.env.local' \          # 排除本地环境变量
-            --exclude='.vscode' \             # 排除 VSCode 配置
-            --exclude='.idea' \               # 排除 JetBrains 配置
-            --exclude='.DS_Store' \           # 排除 macOS 系统文件
-            --exclude='*.log' \               # 排除日志文件
-            --exclude='*.sock' \              # 排除套接字文件
-            --exclude='*.device' \            # 排除设备文件
-            --exclude='*.fifo' \              # 排除命名管道
-            --copy-links \                    # 复制符号链接内容
-            -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
-            $GITHUB_WORKSPACE/ \              # 源路径（带斜杠）
-            ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/  # 目标路径（带斜杠）
-
-      - name: 修复服务器权限
+      - name: 创建服务器目录
         run: |
           ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-            "chmod -R 755 /www/wwwroot/egg-blog/ && \
-             chown -R www-data:www-data /www/wwwroot/egg-blog/"
+            "mkdir -p /www/wwwroot/egg-blog/"
+
+      - name: 同步文件到服务器（修复路径）
+        run: |
+          rsync -avz --progress --delete \
+            --exclude='node_modules' \
+            --exclude='.git' \
+            --exclude='.env' \
+            --exclude='.env.local' \
+            --exclude='.vscode' \
+            --exclude='.idea' \
+            --exclude='.DS_Store' \
+            --exclude='*.log' \
+            --exclude='*.sock' \
+            --exclude='*.device' \
+            --exclude='*.fifo' \
+            --copy-links \
+            -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
+            "$GITHUB_WORKSPACE/" \
+            ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
 
       - name: 调试-列出目标目录文件
         run: |
