@@ -36,6 +36,18 @@ jobs:
           --exclude='.vscode' \
           --exclude='.idea' \
           --exclude='.DS_Store' \
+          --exclude='*.log' \
+          --exclude='Thumbs.db' \
           -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
           $GITHUB_WORKSPACE/ \
           ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
+
+    - name: 修复服务器目录权限
+      run: |
+        ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+          "chmod -R 755 /www/wwwroot/egg-blog/ && chown -R www-data:www-data /www/wwwroot/egg-blog/"
+
+    - name: 检查磁盘空间
+      run: |
+        ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+          "df -h /www/wwwroot/egg-blog/"
