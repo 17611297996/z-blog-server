@@ -32,6 +32,9 @@ jobs:
           --exclude='node_modules' \
           --exclude='.git' \
           --exclude='.env' \
+          --exclude='.env.local' \
+          --exclude='.vscode' \
+          --exclude='.idea' \
           --exclude='.DS_Store' \
           -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
           $GITHUB_WORKSPACE/ \
