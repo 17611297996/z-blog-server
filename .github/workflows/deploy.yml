@@ -35,6 +35,7 @@ jobs:
             --exclude='.idea/' \
             --exclude='.vscode/' \
             --exclude='*.log' \
+            --exclude='.github' \
             -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
             $GITHUB_WORKSPACE/ \
             ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
