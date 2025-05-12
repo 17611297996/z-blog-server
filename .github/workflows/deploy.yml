@@ -2,55 +2,55 @@ name: 部署到服务器
 
 on:
   push:
-    branches: ['main']
+    branches: [ "main" ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 检出代码
-        uses: actions/checkout@v4
+    - name: 检出代码
+      uses: actions/checkout@v4
 
-      - name: 调试-验证源路径
-        run: |
-          echo "当前工作目录: $GITHUB_WORKSPACE"
-          ls -la $GITHUB_WORKSPACE
-          find $GITHUB_WORKSPACE -type d -name "z-blog-server"
+    - name: 调试-列出仓库文件
+      run: ls -la $GITHUB_WORKSPACE
 
-      - name: 设置SSH环境
-        run: |
-          mkdir -p ~/.ssh
-          chmod 700 ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/github_actions_key
-          chmod 600 ~/.ssh/github_actions_key
-          ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+    - name: 配置SSH环境
+      run: |
+        mkdir -p ~/.ssh
+        chmod 700 ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/github_actions_key
+        chmod 600 ~/.ssh/github_actions_key
+        ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-      - name: 创建服务器目录
-        run: |
-          ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-            "mkdir -p /www/wwwroot/egg-blog/"
+    - name: 安装Rsync工具
+      run: sudo apt-get update && sudo apt-get install -y rsync
 
-      - name: 同步文件到服务器（修复路径）
-        run: |
-          rsync -avz --progress --delete \
-            --exclude='node_modules' \
-            --exclude='.git' \
-            --exclude='.env' \
-            --exclude='.env.local' \
-            --exclude='.vscode' \
-            --exclude='.idea' \
-            --exclude='.DS_Store' \
-            --exclude='*.log' \
-            --exclude='*.sock' \
-            --exclude='*.device' \
-            --exclude='*.fifo' \
-            --copy-links \
-            -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
-            "$GITHUB_WORKSPACE/" \
-            ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
+    - name: 构建项目（适配pnpm/npm）
+      working-directory: vue-blog-project
+      run: |
+        npm install -g pnpm
+        pnpm install
+        rm -rf node_modules/.vite
+        pnpm run build
 
-      - name: 调试-列出目标目录文件
-        run: |
-          ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-            "ls -la /www/wwwroot/egg-blog"
+    - name: 调试-显示构建产物
+      run: ls -la vue-blog-project/dist
+
+    - name: 设置服务器同步参数
+      run: |
+        mkdir -p ~/.ssh
+        chmod 700 ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/github_actions_key
+        chmod 600 ~/.ssh/github_actions_key
+        ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+
+    - name: 同步构建文件到服务器
+      run: |
+        rsync -avz --progress --delete \
+          --exclude='node_modules' \
+          --exclude='.git' \
+          --exclude='.DS_Store' \
+          -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
+          ./vue-blog-project/dist/ \
+          ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/default/
