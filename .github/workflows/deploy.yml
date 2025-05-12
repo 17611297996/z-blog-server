@@ -12,8 +12,10 @@ jobs:
     - name: 检出代码
       uses: actions/checkout@v4
 
-    - name: 调试-列出仓库文件
-      run: ls -la $GITHUB_WORKSPACE
+    - name: 修复本地文件权限
+      run: |
+        find $GITHUB_WORKSPACE -type f -exec chmod 644 {} \;
+        find $GITHUB_WORKSPACE -type d -exec chmod 755 {} \;
 
     - name: 配置SSH环境
       run: |
@@ -26,28 +28,19 @@ jobs:
     - name: 安装Rsync
       run: sudo apt-get update && sudo apt-get install -y rsync
 
-    - name: 同步文件到服务器（调试模式）
+    - name: 同步文件到服务器（终极调试）
       run: |
         rsync -avzvv --progress --delete \
           --exclude='node_modules' \
-          --exclude='.git' \
-          --exclude='.env' \
-          --exclude='.env.local' \
-          --exclude='.vscode' \
-          --exclude='.idea' \
-          --exclude='.DS_Store' \
-          --exclude='*.log' \
-          --exclude='Thumbs.db' \
-          -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
+          --exclude='.*' \
+          --copy-links \
+          -e "ssh -vvv -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
           $GITHUB_WORKSPACE/ \
-          ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
+          ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/ \
+          > rsync-debug.log 2>&1
+        cat rsync-debug.log
 
-    - name: 修复服务器目录权限
+    - name: 修复服务器权限
       run: |
         ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
           "chmod -R 755 /www/wwwroot/egg-blog/ && chown -R www-data:www-data /www/wwwroot/egg-blog/"
-
-    - name: 检查磁盘空间
-      run: |
-        ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-          "df -h /www/wwwroot/egg-blog/"
