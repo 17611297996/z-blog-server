@@ -28,9 +28,14 @@ jobs:
     - name: Install Rsync
       run: sudo apt-get update && sudo apt-get install -y rsync  # 确保 Runner 有 rsync 工具
 
-    - name: Sync Files via Rsync
+    - name: Create Target Directory on Server
+      run: |
+        ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+          "mkdir -p /www/wwwroot/egg-blog"
+
+    - name: Sync Files via Rsync to egg-blog
       run: |
         rsync -avz --progress --delete \
           -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
           $GITHUB_WORKSPACE/ \
-          ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/default/
+          ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
