@@ -1,45 +1,41 @@
-name: 部署到服务器
+name: 全栈部署(node服务端)
 
 on:
-    push:
-        branches: ['main']
+  push:
+    branches: [ "main" ]
 
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: 检出代码
-              uses: actions/checkout@v4
+    steps:
+    # 步骤 1: 检出代码仓库
+    - name: 检出代码
+      uses: actions/checkout@v4
 
-            - name: 调试-列出仓库文件
-              run: ls -la $GITHUB_WORKSPACE
+    # 步骤 2: 配置SSH连接环境
+    - name: 配置SSH密钥
+      run: |
+        # 创建SSH目录并设置权限
+        mkdir -p ~/.ssh
+        chmod 700 ~/.ssh
+        # 注入服务器SSH私钥（需提前在Secrets配置）
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/github_actions_key
+        chmod 600 ~/.ssh/github_actions_key
+        # 添加服务器指纹到信任列表（避免首次连接确认）
+        ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-            - name: 配置SSH环境
-              run: |
-                  mkdir -p ~/.ssh
-                  chmod 700 ~/.ssh
-                  echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/github_actions_key
-                  chmod 600 ~/.ssh/github_actions_key
-                  ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+    # 步骤 3: 安装rsync同步工具
+    - name: 安装rsync
+      run: sudo apt-get update && sudo apt-get install -y rsync
 
-            - name: 安装Rsync工具
-              run: sudo apt-get update && sudo apt-get install -y rsync
-
-            - name: 设置服务器同步参数
-              run: |
-                  mkdir -p ~/.ssh
-                  chmod 700 ~/.ssh
-                  echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/github_actions_key
-                  chmod 600 ~/.ssh/github_actions_key
-                  ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
-
-            - name: 同步构建文件到服务器
-              run: |
-                  rsync -avz --progress --delete \
-                    --exclude='node_modules' \
-                    --exclude='.git' \
-                    --exclude='.DS_Store' \
-                    -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
-                    ./vue-blog-project/dist/ \
-                    ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
+    # 步骤 4: 同步所有文件到服务器（排除node_modules）
+    - name: 同步代码到服务器
+      run: |
+        rsync -avz --progress --delete \
+          --exclude='node_modules' \    # 排除包管理目录
+          --exclude='.git' \            # 排除Git版本控制文件
+          --exclude='.env.local' \      # 排除本地环境变量文件（可选）
+          -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
+          . \                           # 当前目录（仓库根目录）作为源
+          ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/  # 服务器目标路径
