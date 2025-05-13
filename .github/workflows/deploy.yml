@@ -42,7 +42,7 @@ jobs:
                   cd /www/wwwroot/egg-blog && npm stop || echo "停止服务失败，可能服务未运行"
 
                   # 启动服务
-                  cd /www/wwwroot/egg-blog && npm start
+                  cd /www/wwwroot/egg-blog && nohup npm start > /dev/null 2>&1 &
                   EOF
 
             - name: 调试-列出目标目录文件
