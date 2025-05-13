@@ -47,13 +47,7 @@ jobs:
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
                     "ls -la /www/wwwroot/egg-blog"
 
-            - name: 获取 PM2 路径
-              id: get_pm2_path
-              run: |
-                  PM2_PATH=$(ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} "which pm2")
-                  echo "PM2_PATH=$PM2_PATH" >> $GITHUB_ENV
-
             - name: 重启 PM2 服务
-              run: |
+               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                    "${{ env.PM2_PATH }} restart all"
+                    "/www/server/nvm/versions/node/v18.20.8/bin/pm2 restart all"
