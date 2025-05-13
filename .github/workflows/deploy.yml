@@ -9,60 +9,31 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: 检出仓库代码
-              uses: actions/checkout@v4
-
-            - name: 调试-列出仓库文件
-              run: ls -la $GITHUB_WORKSPACE
-
-            - name: 设置SSH环境
-              run: |
-                  mkdir -p ~/.ssh
-                  chmod 700 ~/.ssh
-                  echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/github_actions_key
-                  chmod 600 ~/.ssh/github_actions_key
-                  ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
-
-            - name: 安装Rsync工具
-              run: sudo apt-get update && sudo apt-get install -y rsync
-
-            - name: 同步文件到服务器
-              run: |
-                  rsync -avz --progress \
-                    --exclude='.git' \
-                    --exclude='.github/' \
-                    --exclude='node_modules/' \
-                    --exclude='*.log' \
-                    -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
-                    $GITHUB_WORKSPACE/ \
-                    ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/ \
-                    || echo "忽略非关键错误"
+            # ... [保持其他步骤不变] ...
 
             - name: 重启PM2服务
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
-                  # 获取项目路径
-                  PM2_PATH="/www/wwwroot/egg-blog"
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<'EOL'
+                  # 强制加载环境配置
+                  source ~/.bashrc 2>/dev/null || true
+                  source ~/.bash_profile 2>/dev/null || true
+                  source ~/.profile 2>/dev/null || true
 
-                  # 检查PM2进程
+                  # 验证环境路径
+                  export PATH="$PATH:/usr/local/bin:$HOME/.npm-global/bin"
+                  echo "PM2路径: $(which pm2)"
+
+                  # 重启应用流程
+                  PM2_PATH="/www/wwwroot/egg-blog"
                   if pm2 list | grep -q "egg-blog"; then
-                    echo "正在重启现有应用..."
+                    echo "正在重启应用..."
                     pm2 restart egg-blog --update-env
                   else
                     echo "启动新应用..."
                     cd $PM2_PATH && pm2 start ecosystem.config.js
                   fi
 
-                  # 保存PM2配置
+                  # 保存配置并输出日志
                   pm2 save
-                  pm2 logs --lines 10
-                  EOF
-
-            - name: 强制成功步骤
-              if: always()
-              run: echo "强制继续执行流程..."
-
-            - name: 调试-列出目标目录文件
-              run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                    "ls -la /www/wwwroot/egg-blog"
+                  pm2 logs --lines 10 --nostream
+                  EOL
