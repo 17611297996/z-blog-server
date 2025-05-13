@@ -36,18 +36,33 @@ jobs:
                     -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
                     $GITHUB_WORKSPACE/ \
                     ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/ \
-                    || echo "忽略非关键错误"  # 错误抑制
+                    || echo "忽略非关键错误"
+
+            - name: 重启PM2服务
+              run: |
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
+                  # 获取项目路径
+                  PM2_PATH="/www/wwwroot/egg-blog"
+
+                  # 检查PM2进程
+                  if pm2 list | grep -q "egg-blog"; then
+                    echo "正在重启现有应用..."
+                    pm2 restart egg-blog --update-env
+                  else
+                    echo "启动新应用..."
+                    cd $PM2_PATH && pm2 start ecosystem.config.js
+                  fi
+
+                  # 保存PM2配置
+                  pm2 save
+                  pm2 logs --lines 10
+                  EOF
 
             - name: 强制成功步骤
-              if: always() # 无论上一步是否失败都执行
+              if: always()
               run: echo "强制继续执行流程..."
 
             - name: 调试-列出目标目录文件
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
                     "ls -la /www/wwwroot/egg-blog"
-
-            - name: 重启 PM2 服务
-              run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                    "/www/server/nvm/versions/node/v18.20.8/bin/pm2 restart all"
