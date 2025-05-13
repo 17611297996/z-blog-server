@@ -120,6 +120,7 @@
         "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-watcher/config/locales",
         "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-schedule/config/locales",
         "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/config/locales",
+        "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-development/config/locales",
         "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/config/locales",
         "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/locales",
         "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-view/config/locales",
@@ -133,7 +134,7 @@
       "functionName": "__"
     },
     "watcher": {
-      "type": "default",
+      "type": "development",
       "eventSources": {
         "default": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-watcher/lib/event-sources/default",
         "development": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-watcher/lib/event-sources/development"
@@ -168,6 +169,14 @@
       },
       "checkFile": "<Function anonymous>"
     },
+    "development": {
+      "watchDirs": [],
+      "ignoreDirs": [],
+      "fastReady": false,
+      "reloadOnDebug": true,
+      "overrideDefault": false,
+      "overrideIgnore": false
+    },
     "logrotator": {
       "filesRotateByHour": null,
       "hourDelimiter": "-",
@@ -182,18 +191,17 @@
       "dir": "/Users/zuohuaihan/Desktop/归档/z-blog-server/public",
       "dynamic": true,
       "preload": false,
-      "buffer": true,
-      "maxFiles": 1000,
-      "maxAge": 31536000
+      "buffer": false,
+      "maxFiles": 1000
     },
     "view": {
       "root": "/Users/zuohuaihan/Desktop/归档/z-blog-server/app/view",
-      "cache": true,
+      "cache": false,
       "defaultExtension": ".html",
       "defaultViewEngine": "",
       "mapping": {}
     },
-    "env": "prod",
+    "env": "local",
     "name": "egg-blog",
     "keys": "<String len: 27>",
     "cookies": {},
@@ -281,19 +289,21 @@
       "returnRawBody": true
     },
     "logger": {
-      "dir": "/Users/zuohuaihan/logs/egg-blog",
+      "dir": "/Users/zuohuaihan/Desktop/归档/z-blog-server/logs/egg-blog",
       "encoding": "utf8",
-      "env": "prod",
+      "env": "local",
       "level": "INFO",
       "consoleLevel": "INFO",
-      "disableConsoleAfterReady": true,
+      "disableConsoleAfterReady": false,
       "outputJSON": false,
       "buffer": true,
       "appLogName": "egg-blog-web.log",
       "coreLogName": "egg-web.log",
       "agentLogName": "egg-agent.log",
       "errorLogName": "common-error.log",
-      "coreLogger": {},
+      "coreLogger": {
+        "consoleLevel": "WARN"
+      },
       "allowDebugAtProd": false,
       "enablePerformanceTimer": false,
       "enableFastContextLogger": false,
@@ -334,7 +344,8 @@
       "overrideMethod",
       "session",
       "securities",
-      "i18n"
+      "i18n",
+      "eggLoaderTrace"
     ],
     "workerStartTimeout": 600000,
     "serverTimeout": null,
@@ -400,7 +411,10 @@
       "env": [],
       "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
       "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-watcher",
-      "version": "3.1.1"
+      "version": "3.1.1",
+      "dependents": [
+        "development"
+      ]
     },
     "multipart": {
       "enable": true,
@@ -429,7 +443,7 @@
       "version": "3.7.0"
     },
     "development": {
-      "enable": false,
+      "enable": true,
       "package": "egg-development",
       "name": "development",
       "dependencies": [
@@ -509,7 +523,7 @@
   "appInfo": {
     "name": "egg-blog",
     "baseDir": "/Users/zuohuaihan/Desktop/归档/z-blog-server",
-    "env": "prod",
+    "env": "local",
     "scope": "",
     "HOME": "/Users/zuohuaihan",
     "pkg": {
@@ -552,6 +566,6 @@
       "author": "",
       "license": "MIT"
     },
-    "root": "/Users/zuohuaihan"
+    "root": "/Users/zuohuaihan/Desktop/归档/z-blog-server"
   }
 }

@@ -6,9 +6,8 @@
     "dir": "/Users/zuohuaihan/Desktop/归档/z-blog-server/config/config.default.js",
     "dynamic": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/config.default.js",
     "preload": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/config.default.js",
-    "buffer": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/config.prod.js",
-    "maxFiles": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/config.default.js",
-    "maxAge": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/config.prod.js"
+    "buffer": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/config.default.js",
+    "maxFiles": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/config.default.js"
   },
   "session": {
     "maxAge": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-session/config/config.default.js",
@@ -43,7 +42,7 @@
       "value": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js"
     },
     "hsts": {
-      "enable": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js",
+      "enable": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.local.js",
       "maxAge": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js",
       "includeSubdomains": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js"
     },
@@ -100,7 +99,7 @@
     "cookieMaxAge": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-i18n/config/config.default.js"
   },
   "watcher": {
-    "type": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-watcher/config/config.default.js",
+    "type": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-watcher/config/config.local.js",
     "eventSources": {
       "default": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-watcher/config/config.default.js",
       "development": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-watcher/config/config.default.js"
@@ -134,6 +133,14 @@
       "disable": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/config/config.default.js"
     }
   },
+  "development": {
+    "watchDirs": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-development/config/config.default.js",
+    "ignoreDirs": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-development/config/config.default.js",
+    "fastReady": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-development/config/config.default.js",
+    "reloadOnDebug": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-development/config/config.default.js",
+    "overrideDefault": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-development/config/config.default.js",
+    "overrideIgnore": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-development/config/config.default.js"
+  },
   "logrotator": {
     "filesRotateByHour": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/config/config.default.js",
     "hourDelimiter": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/config/config.default.js",
@@ -145,7 +152,7 @@
   },
   "view": {
     "root": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-view/config/config.default.js",
-    "cache": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-view/config/config.default.js",
+    "cache": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-view/config/config.local.js",
     "defaultExtension": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-view/config/config.default.js",
     "defaultViewEngine": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-view/config/config.default.js",
     "mapping": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-view/config/config.default.js"
@@ -249,7 +256,9 @@
     "coreLogName": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/config.default.js",
     "agentLogName": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/config.default.js",
     "errorLogName": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/config.default.js",
-    "coreLogger": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/config.default.js",
+    "coreLogger": {
+      "consoleLevel": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/config.local.js"
+    },
     "allowDebugAtProd": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/config.default.js",
     "enablePerformanceTimer": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/config.default.js",
     "enableFastContextLogger": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/config.default.js"
