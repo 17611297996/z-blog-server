@@ -1,5 +1,5 @@
 /**
- * @param {Egg.Application} app - egg application
+ * @param {Egg.Application} app - egg applicat
  */
 module.exports = app => {
   const { router, controller } = app;
