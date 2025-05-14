@@ -49,8 +49,3 @@ jobs:
                   pm2 save
                   sudo env PATH=$PATH:/www/server/nvm/versions/node/v18.20.8/bin /www/server/nvm/versions/node/v18.20.8/lib/node_modules/pm2/bin/pm2 startup systemd -u ${{ secrets.SSH_USERNAME }} --hp /home/${{ secrets.SSH_USERNAME }}
                   EOF
-
-            - name: 调试 - 列出目标目录文件
-              run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_IP }} \
-                    "ls -la /www/wwwroot/egg-blog"
