@@ -12,42 +12,53 @@ jobs:
             - name: 检出仓库代码
               uses: actions/checkout@v4
 
-            - name: 设置SSH环境
+            - name: 设置 SSH 环境
               run: |
                   mkdir -p ~/.ssh
                   chmod 700 ~/.ssh
                   echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/github_actions_key
                   chmod 600 ~/.ssh/github_actions_key
-                  ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_IP }} >> ~/.ssh/known_hosts
+                  ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-            - name: 安装Rsync工具
+            - name: 安装依赖工具
               run: sudo apt-get update && sudo apt-get install -y rsync
 
-            - name: 停止应用服务
+            - name: 停止 PM2 服务
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_IP }} <<EOF
-                  pm2 stop app || echo "应用未运行"
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
+                  cd /www/wwwroot/egg-blog
+                  pm2 stop all || echo "停止 PM2 服务失败，可能服务未运行"
                   EOF
 
             - name: 同步文件到服务器
               run: |
-                  rsync -avz --progress --delete \
+                  rsync -avz --progress \
                     --exclude='.git' \
                     --exclude='.github/' \
-                    --filter="protect node_modules/" \
+                    --exclude='node_modules/' \
+                    --exclude='*.log' \
                     -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
                     $GITHUB_WORKSPACE/ \
-                    ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
+                    ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/ \
+                    || echo "忽略非关键错误"
 
-            - name: 重启应用服务
+            - name: 安装项目依赖
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_IP }} <<EOF
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
                   cd /www/wwwroot/egg-blog
-                  npm install
-                  pm2 start app
+                  npm install --production
                   EOF
 
-            - name: 调试-列出目标目录文件
+            - name: 启动 PM2 服务
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_IP }} \
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
+                  cd /www/wwwroot/egg-blog
+                  pm2 start npm --name "egg-blog" -- start
+                  pm2 save
+                  pm2 startup
+                  EOF
+
+            - name: 调试 - 列出目标目录文件
+              run: |
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
                     "ls -la /www/wwwroot/egg-blog"
