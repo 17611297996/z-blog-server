@@ -119,7 +119,7 @@ class ArticleController extends Controller {
             const data = fs.readFileSync(filePath, 'utf8');
             const contentWithoutFrontMatter = data.replace(/^---\s*(?:.*?\s*)*?---\s*/s, '');
             const md = require('markdown-it')();
-            //const htmlContent = md.render(contentWithoutFrontMatter);
+            const htmlContent = md.render(contentWithoutFrontMatter);
             ctx.body = { content: contentWithoutFrontMatter };
 
         } catch (err) {
