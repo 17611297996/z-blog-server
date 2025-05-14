@@ -120,7 +120,7 @@ class ArticleController extends Controller {
             const contentWithoutFrontMatter = data.replace(/^---\s*(?:.*?\s*)*?---\s*/s, '');
             const md = require('markdown-it')();
             const htmlContent = md.render(contentWithoutFrontMatter);
-            ctx.body = { content: htmlContent };
+            ctx.body = { content: contentWithoutFrontMatter };
 
         } catch (err) {
             console.error('Error reading file:', err);
