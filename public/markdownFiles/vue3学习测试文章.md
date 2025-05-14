@@ -6,20 +6,16 @@ tags: [技术点滴, 前端开发, vue]
 sort: 1
 ---
 
-# 如何使用 Markdown 编写文章
+```vue
+<template>
+    <MdEditor v-model="text" />
+</template>
 
-Markdown 是一种轻量级的标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的 HTML 文档。
+<script setup>
+import { ref } from 'vue'
+import { MdEditor } from 'md-editor-v3'
+import 'md-editor-v3/lib/style.css'
 
-## 基本语法
-
-### 标题
-
-使用 `#` 符号创建标题：
-
-```markdown
-# 这是一级标题
-
-## 这是二级标题
-
-### 这是三级标题
+const text = ref('Hello Editor!')
+</script>
 ```

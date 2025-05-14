@@ -105,9 +105,10 @@ class ArticleController extends Controller {
     async getContent() {
         const { ctx } = this;
         const filename = ctx.params.filename;
+        console.log(ctx.params, '===>')
         const folderPath = path.join(this.app.baseDir, 'public', 'markdownFiles');
         const filePath = path.join(folderPath, filename);
-
+        console.log(filePath, 'filePath')
         try {
             if (!fs.existsSync(filePath)) {
                 ctx.status = 404;
@@ -119,7 +120,8 @@ class ArticleController extends Controller {
             const contentWithoutFrontMatter = data.replace(/^---\s*(?:.*?\s*)*?---\s*/s, '');
             const md = require('markdown-it')();
             const htmlContent = md.render(contentWithoutFrontMatter);
-            ctx.body = { content: htmlContent };
+            ctx.body = { content: contentWithoutFrontMatter };
+
         } catch (err) {
             console.error('Error reading file:', err);
             ctx.status = 500;
