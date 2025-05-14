@@ -18,7 +18,7 @@ jobs:
                   chmod 700 ~/.ssh
                   echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/github_actions_key
                   chmod 600 ~/.ssh/github_actions_key
-                  ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+                  ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_IP }} >> ~/.ssh/known_hosts
 
             - name: 安装Rsync工具
               run: sudo apt-get update && sudo apt-get install -y rsync
@@ -30,13 +30,14 @@ jobs:
                     --exclude='.github/' \
                     --exclude='node_modules/' \
                     --exclude='*.log' \
+                    --no-times \  # 添加此选项
                     -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
                     $GITHUB_WORKSPACE/ \
-                    ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/ \
+                    ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_IP }}:/www/wwwroot/egg-blog/
 
             - name: 重启应用服务
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_IP }} <<EOF
                   # 检查 pm2 是否正在运行
                   pm2 list || (npm install pm2 -g && pm2 list)
 
@@ -56,5 +57,5 @@ jobs:
 
             - name: 调试-列出目标目录文件
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_IP }} \
                     "ls -la /www/wwwroot/egg-blog"
