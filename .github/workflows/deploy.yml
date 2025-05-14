@@ -23,11 +23,12 @@ jobs:
             - name: 安装 Rsync 工具
               run: sudo apt-get update && sudo apt-get install -y rsync
 
-            - name: 停止 PM2 服务
+            - name: 停止并删除 PM2 服务
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
                   cd /www/wwwroot/egg-blog
                   pm2 stop all || echo "停止 PM2 服务失败，可能服务未运行"
+                  pm2 delete all || echo "删除 PM2 进程失败，可能没有进程"
                   EOF
 
             - name: 同步文件到服务器
