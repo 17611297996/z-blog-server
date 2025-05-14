@@ -35,14 +35,14 @@ jobs:
                     ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/ \
                     || echo "忽略非关键错误"
 
-            - name: 停止并启动应用服务
+            - name: 重启应用服务
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
                   # 停止服务
                   cd /www/wwwroot/egg-blog && npm stop || echo "停止服务失败，可能服务未运行"
 
                   # 启动服务
-                  cd /www/wwwroot/egg-blog && nohup npm start > /dev/null 2>&1 &
+                  cd /www/wwwroot/egg-blog && npm start
                   EOF
 
             - name: 调试-列出目标目录文件
