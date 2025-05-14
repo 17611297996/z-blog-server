@@ -40,3 +40,9 @@
 2025-05-14 18:59:38,816 INFO 19444 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
 2025-05-14 18:59:38,816 INFO 19444 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/clean_log.js
 2025-05-14 18:59:38,816 INFO 19444 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-05-14 19:04:21,433 INFO 20146 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-05-14 19:04:21,433 INFO 20146 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-05-14 19:04:21,433 INFO 20146 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2025-05-14 19:04:32,092 INFO 20173 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2025-05-14 19:04:32,092 INFO 20173 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/clean_log.js
+2025-05-14 19:04:32,092 INFO 20173 [egg-schedule]: register schedule /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
