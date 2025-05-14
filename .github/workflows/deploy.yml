@@ -41,8 +41,12 @@ jobs:
                   # 检查 pm2 是否正在运行
                   pm2 list || (npm install pm2 -g && pm2 list)
 
-                  # 重启应用
-                  cd /www/wwwroot/egg-blog && pm2 restart app
+                  # 如果应用已存在，则重启；否则，启动
+                  if pm2 list | grep -q "app"; then
+                    pm2 restart app
+                  else
+                    cd /www/wwwroot/egg-blog && pm2 start npm --name "app" -- start
+                  fi
                   EOF
 
             - name: 调试-列出目标目录文件
