@@ -128,7 +128,42 @@ class ArticleController extends Controller {
             ctx.body = { code: 500, msg: '无法读取文件', data: null };
         }
     }
+    async getCategory() {
+        const { ctx } = this;
+        const folderPath = path.join(this.app.baseDir, 'public', 'config');
 
+        try {
+            if (!fs.existsSync(folderPath)) {
+                ctx.status = 404;
+                ctx.body = { code: 404, msg: '文件夹不存在', data: null };
+                return;
+            }
+
+            const files = fs.readdirSync(folderPath);
+            const articles = [];
+
+            for (const file of files) {
+                if (file.endsWith('.md')) {
+                    const filePath = path.join(folderPath, file);
+                    const fileContent = fs.readFileSync(filePath, 'utf8');
+                    const frontMatter = this.parseFrontMatter(fileContent);
+
+                    articles.push({
+                        category: frontMatter.category || [],
+                    });
+                }
+            }
+            ctx.body = {
+                code: 200,
+                msg: "读取成功",
+                data: articles[0].category,
+            };
+        } catch (err) {
+            console.error('Error reading folder:', err);
+            ctx.status = 500;
+            ctx.body = { code: 500, msg: '无法读取文件夹', data: null };
+        }
+    }
     parseFrontMatter(content) {
         const frontMatterRegex = /^---\s*(?:.*?\s*)*?---/s;
         const match = content.match(frontMatterRegex);

@@ -248,3 +248,137 @@ hostname: zuohuaihandeMacBook-Pro.local
 2025-05-14 19:04:31,160 INFO 15169 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":15611844,"size":5331,"blocks":16,"atimeMs":1747220661575.0881,"mtimeMs":1747220671099.7383,"ctimeMs":1747220671099.7383,"birthtimeMs":1747045079381.9326,"atime":"2025-05-14T11:04:21.575Z","mtime":"2025-05-14T11:04:31.100Z","ctime":"2025-05-14T11:04:31.100Z","birthtime":"2025-05-12T10:17:59.382Z"},"remove":false,"isDirectory":false,"isFile":true}
 2025-05-14 19:06:15,482 WARN 15169 [agent:development] reload worker because /Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js change
 2025-05-14 19:06:15,280 INFO 15169 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":15611844,"size":5341,"blocks":16,"atimeMs":1747220775280.1506,"mtimeMs":1747220775219.8901,"ctimeMs":1747220775219.8901,"birthtimeMs":1747045079381.9326,"atime":"2025-05-14T11:06:15.280Z","mtime":"2025-05-14T11:06:15.220Z","ctime":"2025-05-14T11:06:15.220Z","birthtime":"2025-05-12T10:17:59.382Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-15 18:19:04,545 INFO 29955 [egg:logger] init all loggers with options: {"dir":"/Users/zuohuaihan/Desktop/归档/z-blog-server/logs/egg-blog","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"egg-blog-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"enablePerformanceTimer":false,"enableFastContextLogger":false,"type":"agent","localStorage":{"enabled":false}}
+2025-05-15 18:19:04,557 INFO 29955 [egg:core] dump config after load, 6ms
+2025-05-15 18:19:04,604 INFO 29955 [egg-watcher] Start watching: ["/Users/zuohuaihan/Desktop/归档/z-blog-server/app","/Users/zuohuaihan/Desktop/归档/z-blog-server/config","/Users/zuohuaihan/Desktop/归档/z-blog-server/mocks","/Users/zuohuaihan/Desktop/归档/z-blog-server/mocks_proxy","/Users/zuohuaihan/Desktop/归档/z-blog-server/app.js"]
+2025-05-15 18:19:04,604 INFO 29955 [egg-watcher] Start watching: "/Users/zuohuaihan/Desktop/归档/z-blog-server/app"
+2025-05-15 18:19:04,604 INFO 29955 [egg-watcher] Start watching: "/Users/zuohuaihan/Desktop/归档/z-blog-server/config"
+2025-05-15 18:19:04,604 INFO 29955 [egg-watcher] Start watching: "/Users/zuohuaihan/Desktop/归档/z-blog-server/mocks"
+2025-05-15 18:19:04,604 INFO 29955 [egg-watcher] Start watching: "/Users/zuohuaihan/Desktop/归档/z-blog-server/mocks_proxy"
+2025-05-15 18:19:04,605 INFO 29955 [egg-watcher] Start watching: "/Users/zuohuaihan/Desktop/归档/z-blog-server/app.js"
+2025-05-15 18:19:04,605 INFO 29955 [egg-watcher:agent] watcher start success
+2025-05-15 18:19:04,630 INFO 29955 egg start timeline:
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [616ms] - #0 Process Start
+                                ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [322ms] - #1 Application Start
+                                 ▇ [12ms] - #2 Load Plugin
+                                  ▇ [13ms] - #3 Load Config
+                                  ▇ [0ms] - #4 Require(0) config/config.default.js
+                                  ▇ [1ms] - #5 Require(1) node_modules/egg-session/config/config.default.js
+                                  ▇ [0ms] - #6 Require(2) node_modules/egg-security/config/config.default.js
+                                  ▇ [0ms] - #7 Require(3) node_modules/egg-jsonp/config/config.default.js
+                                  ▇ [0ms] - #8 Require(4) node_modules/egg-onerror/config/config.default.js
+                                  ▇ [0ms] - #9 Require(5) node_modules/egg-i18n/config/config.default.js
+                                  ▇ [0ms] - #10 Require(6) node_modules/egg-watcher/config/config.default.js
+                                  ▇ [1ms] - #11 Require(7) node_modules/egg-schedule/config/config.default.js
+                                  ▇ [0ms] - #12 Require(8) node_modules/egg-multipart/config/config.default.js
+                                  ▇ [0ms] - #13 Require(9) node_modules/egg-development/config/config.default.js
+                                  ▇ [0ms] - #14 Require(10) node_modules/egg-logrotator/config/config.default.js
+                                  ▇ [0ms] - #15 Require(11) node_modules/egg-static/config/config.default.js
+                                  ▇ [0ms] - #16 Require(12) node_modules/egg-view/config/config.default.js
+                                  ▇ [0ms] - #17 Require(13) node_modules/egg/config/config.default.js
+                                  ▇ [0ms] - #18 Require(14) config/config.default.js
+                                  ▇ [1ms] - #19 Require(15) node_modules/egg-security/config/config.local.js
+                                  ▇ [0ms] - #20 Require(16) node_modules/egg-watcher/config/config.local.js
+                                  ▇ [0ms] - #21 Require(17) node_modules/egg-view/config/config.local.js
+                                  ▇ [0ms] - #22 Require(18) node_modules/egg/config/config.local.js
+                                  ▇▇▇▇▇ [111ms] - #23 Load extend/agent.js
+                                  ▇ [1ms] - #24 Require(19) node_modules/egg-security/app/extend/agent.js
+                                   ▇▇▇▇▇ [103ms] - #25 Require(20) node_modules/egg-schedule/app/extend/agent.js
+                                        ▇ [2ms] - #26 Require(21) node_modules/egg-logrotator/app/extend/agent.js
+                                        ▇▇▇ [60ms] - #27 Load extend/context.js
+                                        ▇ [15ms] - #28 Require(22) node_modules/egg-security/app/extend/context.js
+                                         ▇ [2ms] - #29 Require(23) node_modules/egg-jsonp/app/extend/context.js
+                                         ▇ [0ms] - #30 Require(24) node_modules/egg-i18n/app/extend/context.js
+                                         ▇ [33ms] - #31 Require(25) node_modules/egg-multipart/app/extend/context.js
+                                           ▇ [2ms] - #32 Require(26) node_modules/egg-view/app/extend/context.js
+                                           ▇ [1ms] - #33 Require(27) node_modules/egg/app/extend/context.js
+                                           ▇ [28ms] - #34 Load agent.js
+                                           ▇ [0ms] - #35 Require(28) node_modules/egg-security/agent.js
+                                            ▇ [0ms] - #36 Require(29) node_modules/egg-onerror/agent.js
+                                            ▇ [8ms] - #37 Require(30) node_modules/egg-watcher/agent.js
+                                            ▇ [3ms] - #38 Require(31) node_modules/egg-schedule/agent.js
+                                            ▇ [13ms] - #39 Require(32) node_modules/egg-development/agent.js
+                                             ▇ [1ms] - #40 Require(33) node_modules/egg-logrotator/agent.js
+                                             ▇ [1ms] - #41 Require(34) node_modules/egg/agent.js
+                                             ▇▇ [56ms] - #42 Before Start in node_modules/egg-watcher/lib/init.js:15:14
+                                             ▇▇ [38ms] - #43 Before Start in node_modules/egg-schedule/agent.js:12:9
+                                             ▇▇▇ [74ms] - #44 Before Start in node_modules/egg-development/agent.js:9:9
+2025-05-15 18:19:04,630 INFO 29955 [egg:core] dump config after ready, 6ms
+2025-05-15 18:27:46,707 WARN 29955 [agent:development] reload worker because /Users/zuohuaihan/Desktop/归档/z-blog-server/app/router.js change
+2025-05-15 18:27:46,503 INFO 29955 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/router.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":15611846,"size":440,"blocks":8,"atimeMs":1747304866501.839,"mtimeMs":1747304866441.5923,"ctimeMs":1747304866441.5923,"birthtimeMs":1747045079382.2686,"atime":"2025-05-15T10:27:46.502Z","mtime":"2025-05-15T10:27:46.442Z","ctime":"2025-05-15T10:27:46.442Z","birthtime":"2025-05-12T10:17:59.382Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-15 18:28:08,874 WARN 29955 [agent:development] reload worker because /Users/zuohuaihan/Desktop/归档/z-blog-server/app/router.js change
+2025-05-15 18:28:08,673 INFO 29955 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/router.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":15611846,"size":438,"blocks":8,"atimeMs":1747304888672.5776,"mtimeMs":1747304888614.9658,"ctimeMs":1747304888614.9658,"birthtimeMs":1747045079382.2686,"atime":"2025-05-15T10:28:08.673Z","mtime":"2025-05-15T10:28:08.615Z","ctime":"2025-05-15T10:28:08.615Z","birthtime":"2025-05-12T10:17:59.382Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-15 18:29:32,300 WARN 29955 [agent:development] reload worker because /Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js change
+2025-05-15 18:29:32,097 INFO 29955 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":15611844,"size":6677,"blocks":16,"atimeMs":1747304972097.062,"mtimeMs":1747304972035.995,"ctimeMs":1747304972035.995,"birthtimeMs":1747045079381.9326,"atime":"2025-05-15T10:29:32.097Z","mtime":"2025-05-15T10:29:32.036Z","ctime":"2025-05-15T10:29:32.036Z","birthtime":"2025-05-12T10:17:59.382Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-15 18:29:50,864 INFO 29955 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":15611844,"size":6676,"blocks":16,"atimeMs":1747304990863.8154,"mtimeMs":1747304990802.5193,"ctimeMs":1747304990802.5193,"birthtimeMs":1747045079381.9326,"atime":"2025-05-15T10:29:50.864Z","mtime":"2025-05-15T10:29:50.803Z","ctime":"2025-05-15T10:29:50.803Z","birthtime":"2025-05-12T10:17:59.382Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-15 18:29:51,065 WARN 29955 [agent:development] reload worker because /Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js change
+2025-05-15 18:30:32,671 WARN 29955 [agent:development] reload worker because /Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js change
+2025-05-15 18:30:33,038 WARN 29955 [agent:development] reload worker because /Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js change
+2025-05-15 18:30:32,470 INFO 29955 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":15611844,"size":6588,"blocks":16,"atimeMs":1747305032442.8896,"mtimeMs":1747305032407.8264,"ctimeMs":1747305032407.8264,"birthtimeMs":1747045079381.9326,"atime":"2025-05-15T10:30:32.443Z","mtime":"2025-05-15T10:30:32.408Z","ctime":"2025-05-15T10:30:32.408Z","birthtime":"2025-05-12T10:17:59.382Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-15 18:30:32,787 INFO 29955 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":15611844,"size":6588,"blocks":16,"atimeMs":1747305032442.8896,"mtimeMs":1747305032779.927,"ctimeMs":1747305032779.927,"birthtimeMs":1747045079381.9326,"atime":"2025-05-15T10:30:32.443Z","mtime":"2025-05-15T10:30:32.780Z","ctime":"2025-05-15T10:30:32.780Z","birthtime":"2025-05-12T10:17:59.382Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-15 18:30:32,837 INFO 29955 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":15611844,"size":6588,"blocks":16,"atimeMs":1747305032442.8896,"mtimeMs":1747305032779.927,"ctimeMs":1747305032779.927,"birthtimeMs":1747045079381.9326,"atime":"2025-05-15T10:30:32.443Z","mtime":"2025-05-15T10:30:32.780Z","ctime":"2025-05-15T10:30:32.780Z","birthtime":"2025-05-12T10:17:59.382Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-15 18:31:30,745 WARN 29955 [agent:development] reload worker because /Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js change
+2025-05-15 18:31:30,543 INFO 29955 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":15611844,"size":6588,"blocks":16,"atimeMs":1747305089621.2754,"mtimeMs":1747305090482.5652,"ctimeMs":1747305090482.5652,"birthtimeMs":1747045079381.9326,"atime":"2025-05-15T10:31:29.621Z","mtime":"2025-05-15T10:31:30.483Z","ctime":"2025-05-15T10:31:30.483Z","birthtime":"2025-05-12T10:17:59.382Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-15 18:31:31,672 WARN 29955 [agent:development] reload worker because /Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js change
+2025-05-15 18:31:31,204 INFO 29955 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":15611844,"size":6588,"blocks":16,"atimeMs":1747305090858.155,"mtimeMs":1747305091193.2158,"ctimeMs":1747305091193.2158,"birthtimeMs":1747045079381.9326,"atime":"2025-05-15T10:31:30.858Z","mtime":"2025-05-15T10:31:31.193Z","ctime":"2025-05-15T10:31:31.193Z","birthtime":"2025-05-12T10:17:59.382Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-15 18:31:31,254 INFO 29955 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":15611844,"size":6588,"blocks":16,"atimeMs":1747305090858.155,"mtimeMs":1747305091193.2158,"ctimeMs":1747305091193.2158,"birthtimeMs":1747045079381.9326,"atime":"2025-05-15T10:31:30.858Z","mtime":"2025-05-15T10:31:31.193Z","ctime":"2025-05-15T10:31:31.193Z","birthtime":"2025-05-12T10:17:59.382Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-15 18:31:31,422 INFO 29955 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":15611844,"size":6588,"blocks":16,"atimeMs":1747305090858.155,"mtimeMs":1747305091411.4329,"ctimeMs":1747305091411.4329,"birthtimeMs":1747045079381.9326,"atime":"2025-05-15T10:31:30.858Z","mtime":"2025-05-15T10:31:31.411Z","ctime":"2025-05-15T10:31:31.411Z","birthtime":"2025-05-12T10:17:59.382Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-15 18:31:31,472 INFO 29955 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":15611844,"size":6588,"blocks":16,"atimeMs":1747305090858.155,"mtimeMs":1747305091411.4329,"ctimeMs":1747305091411.4329,"birthtimeMs":1747045079381.9326,"atime":"2025-05-15T10:31:30.858Z","mtime":"2025-05-15T10:31:31.411Z","ctime":"2025-05-15T10:31:31.411Z","birthtime":"2025-05-12T10:17:59.382Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-15 18:50:57,356 INFO 32240 [egg:logger] init all loggers with options: {"dir":"/Users/zuohuaihan/Desktop/归档/z-blog-server/logs/egg-blog","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"egg-blog-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"enablePerformanceTimer":false,"enableFastContextLogger":false,"type":"agent","localStorage":{"enabled":false}}
+2025-05-15 18:50:57,369 INFO 32240 [egg:core] dump config after load, 6ms
+2025-05-15 18:50:57,425 INFO 32240 [egg-watcher] Start watching: ["/Users/zuohuaihan/Desktop/归档/z-blog-server/app","/Users/zuohuaihan/Desktop/归档/z-blog-server/config","/Users/zuohuaihan/Desktop/归档/z-blog-server/mocks","/Users/zuohuaihan/Desktop/归档/z-blog-server/mocks_proxy","/Users/zuohuaihan/Desktop/归档/z-blog-server/app.js"]
+2025-05-15 18:50:57,425 INFO 32240 [egg-watcher] Start watching: "/Users/zuohuaihan/Desktop/归档/z-blog-server/app"
+2025-05-15 18:50:57,426 INFO 32240 [egg-watcher] Start watching: "/Users/zuohuaihan/Desktop/归档/z-blog-server/config"
+2025-05-15 18:50:57,426 INFO 32240 [egg-watcher] Start watching: "/Users/zuohuaihan/Desktop/归档/z-blog-server/mocks"
+2025-05-15 18:50:57,427 INFO 32240 [egg-watcher] Start watching: "/Users/zuohuaihan/Desktop/归档/z-blog-server/mocks_proxy"
+2025-05-15 18:50:57,427 INFO 32240 [egg-watcher] Start watching: "/Users/zuohuaihan/Desktop/归档/z-blog-server/app.js"
+2025-05-15 18:50:57,427 INFO 32240 [egg-watcher:agent] watcher start success
+2025-05-15 18:50:57,479 INFO 32240 egg start timeline:
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [616ms] - #0 Process Start
+                               ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [331ms] - #1 Application Start
+                                ▇ [12ms] - #2 Load Plugin
+                                 ▇ [17ms] - #3 Load Config
+                                 ▇ [0ms] - #4 Require(0) config/config.default.js
+                                 ▇ [1ms] - #5 Require(1) node_modules/egg-session/config/config.default.js
+                                 ▇ [0ms] - #6 Require(2) node_modules/egg-security/config/config.default.js
+                                 ▇ [1ms] - #7 Require(3) node_modules/egg-jsonp/config/config.default.js
+                                 ▇ [0ms] - #8 Require(4) node_modules/egg-onerror/config/config.default.js
+                                 ▇ [0ms] - #9 Require(5) node_modules/egg-i18n/config/config.default.js
+                                 ▇ [1ms] - #10 Require(6) node_modules/egg-watcher/config/config.default.js
+                                 ▇ [0ms] - #11 Require(7) node_modules/egg-schedule/config/config.default.js
+                                 ▇ [1ms] - #12 Require(8) node_modules/egg-multipart/config/config.default.js
+                                 ▇ [1ms] - #13 Require(9) node_modules/egg-development/config/config.default.js
+                                 ▇ [0ms] - #14 Require(10) node_modules/egg-logrotator/config/config.default.js
+                                 ▇ [1ms] - #15 Require(11) node_modules/egg-static/config/config.default.js
+                                 ▇ [0ms] - #16 Require(12) node_modules/egg-view/config/config.default.js
+                                 ▇ [0ms] - #17 Require(13) node_modules/egg/config/config.default.js
+                                 ▇ [0ms] - #18 Require(14) config/config.default.js
+                                 ▇ [0ms] - #19 Require(15) node_modules/egg-security/config/config.local.js
+                                 ▇ [0ms] - #20 Require(16) node_modules/egg-watcher/config/config.local.js
+                                 ▇ [0ms] - #21 Require(17) node_modules/egg-view/config/config.local.js
+                                 ▇ [0ms] - #22 Require(18) node_modules/egg/config/config.local.js
+                                  ▇▇▇▇ [97ms] - #23 Load extend/agent.js
+                                  ▇ [1ms] - #24 Require(19) node_modules/egg-security/app/extend/agent.js
+                                  ▇▇▇▇ [89ms] - #25 Require(20) node_modules/egg-schedule/app/extend/agent.js
+                                      ▇ [2ms] - #26 Require(21) node_modules/egg-logrotator/app/extend/agent.js
+                                       ▇▇ [57ms] - #27 Load extend/context.js
+                                       ▇ [17ms] - #28 Require(22) node_modules/egg-security/app/extend/context.js
+                                       ▇ [3ms] - #29 Require(23) node_modules/egg-jsonp/app/extend/context.js
+                                        ▇ [0ms] - #30 Require(24) node_modules/egg-i18n/app/extend/context.js
+                                        ▇ [28ms] - #31 Require(25) node_modules/egg-multipart/app/extend/context.js
+                                         ▇ [1ms] - #32 Require(26) node_modules/egg-view/app/extend/context.js
+                                         ▇ [2ms] - #33 Require(27) node_modules/egg/app/extend/context.js
+                                         ▇ [38ms] - #34 Load agent.js
+                                         ▇ [1ms] - #35 Require(28) node_modules/egg-security/agent.js
+                                          ▇ [1ms] - #36 Require(29) node_modules/egg-onerror/agent.js
+                                          ▇ [13ms] - #37 Require(30) node_modules/egg-watcher/agent.js
+                                          ▇ [3ms] - #38 Require(31) node_modules/egg-schedule/agent.js
+                                          ▇ [16ms] - #39 Require(32) node_modules/egg-development/agent.js
+                                           ▇ [1ms] - #40 Require(33) node_modules/egg-logrotator/agent.js
+                                           ▇ [0ms] - #41 Require(34) node_modules/egg/agent.js
+                                            ▇▇▇ [68ms] - #42 Before Start in node_modules/egg-watcher/lib/init.js:15:14
+                                            ▇▇ [47ms] - #43 Before Start in node_modules/egg-schedule/agent.js:12:9
+                                            ▇▇▇▇ [79ms] - #44 Before Start in node_modules/egg-development/agent.js:9:9
+2025-05-15 18:50:57,480 INFO 32240 [egg:core] dump config after ready, 34ms
+2025-05-15 19:17:50,241 INFO 32240 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js","stat":{"dev":16777226,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":15611844,"size":6600,"blocks":16,"atimeMs":1747307870189.0874,"mtimeMs":1747307870130.5215,"ctimeMs":1747307870130.5215,"birthtimeMs":1747045079381.9326,"atime":"2025-05-15T11:17:50.189Z","mtime":"2025-05-15T11:17:50.131Z","ctime":"2025-05-15T11:17:50.131Z","birthtime":"2025-05-12T10:17:59.382Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-15 19:17:50,455 WARN 32240 [agent:development] reload worker because /Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/article.js change
