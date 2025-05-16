@@ -591,3 +591,9 @@
                                                 ▇ [0ms] - #63 Require(45) app/router.js
                                                 ▇ [8ms] - #64 Before Start in node_modules/egg-core/lib/egg.js:328:10
 2025-05-16 16:22:38,567 INFO 7477 [egg:core] dump config after ready, 3ms
+2025-05-16 17:53:46,568 WARN 7477 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-16 17:53:46,573 WARN 7477 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-16 18:10:02,526 WARN 7477 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-16 18:10:02,537 WARN 7477 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-16 18:13:50,551 WARN 7477 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-16 18:13:50,551 WARN 7477 [ClusterClient:Watcher] follower closed, and try to init it again

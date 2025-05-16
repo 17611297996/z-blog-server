@@ -118,3 +118,27 @@ name: "ClusterClientNoResponseError"
 pid: 32240
 hostname: zuohuaihandeMacBook-Pro.local
 
+2025-05-16 17:53:46,572 ERROR 7475 nodejs.ClusterClientNoResponseError: client no response in 935644ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 7475
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-16 18:10:02,526 ERROR 7475 nodejs.ClusterClientNoResponseError: client no response in 935883ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 7475
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-16 18:13:50,549 ERROR 7475 nodejs.ClusterClientNoResponseError: client no response in 112019ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 7475
+hostname: zuohuaihandeMacBook-Pro.local
+
