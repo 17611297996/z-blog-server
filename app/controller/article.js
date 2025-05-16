@@ -90,10 +90,13 @@ class ArticleController extends Controller {
                     return false;
                 });
             }
+            const sortFilteredArticles = filteredArticles.sort((a, b) => {
+                return a.sort - b.sort
+            })
             ctx.body = {
                 code: 200,
                 msg: "读取成功",
-                data: filteredArticles,
+                data: sortFilteredArticles,
             };
         } catch (err) {
             console.error('Error reading folder:', err);
