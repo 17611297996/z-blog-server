@@ -36,7 +36,7 @@ module.exports = appInfo => {
   config.static = {
     dir: [
       {
-        prefix: '/public/markdown-images', // Web 访问前缀
+        prefix: '/public', // Web 访问前缀
         dir: path.join(appInfo.baseDir, 'app/public') // 本地存储目录
       }
     ]
