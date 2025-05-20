@@ -78,3 +78,63 @@ message: "missing csrf token"
 pid: 50388
 hostname: zuohuaihandeMacBook-Pro.local
 
+2025-05-20 18:01:10,191 INFO 55245 [-/::1/-/29ms POST /process-markdown] 图片已保存: /Users/zuohuaihan/Desktop/归档/z-blog-server/public/markdownFiles/images/0b4c303f81ec39d14958ad52757af99c.png
+2025-05-20 18:01:10,192 INFO 55245 [-/::1/-/30ms POST /process-markdown] 图片已保存: /Users/zuohuaihan/Desktop/归档/z-blog-server/public/markdownFiles/images/780480d267339b8699037949434d1313.png
+2025-05-20 18:01:10,193 INFO 55245 [-/::1/-/31ms POST /process-markdown] 图片已保存: /Users/zuohuaihan/Desktop/归档/z-blog-server/public/markdownFiles/images/309f0e48f39a4f795b587d8f429cd559.png
+2025-05-20 18:01:10,194 INFO 55245 [-/::1/-/32ms POST /process-markdown] 图片已保存: /Users/zuohuaihan/Desktop/归档/z-blog-server/public/markdownFiles/images/a36c440edbba0f3138ab9cc31ce484bd.png
+2025-05-20 18:01:10,195 INFO 55245 [-/::1/-/33ms POST /process-markdown] 图片已保存: /Users/zuohuaihan/Desktop/归档/z-blog-server/public/markdownFiles/images/250934553691a251ba1d0b8605b2dfbb.png
+2025-05-20 18:01:10,196 INFO 55245 [-/::1/-/34ms POST /process-markdown] 图片已保存: /Users/zuohuaihan/Desktop/归档/z-blog-server/public/markdownFiles/images/8d95c260d0327b65918d176de727f897.png
+2025-05-20 18:01:10,197 INFO 55245 [-/::1/-/35ms POST /process-markdown] 图片已保存: /Users/zuohuaihan/Desktop/归档/z-blog-server/public/markdownFiles/images/4e18bc32c288aad45f0d3c99a43ac527.png
+2025-05-20 18:01:10,198 INFO 55245 [-/::1/-/36ms POST /process-markdown] 图片已保存: /Users/zuohuaihan/Desktop/归档/z-blog-server/public/markdownFiles/images/532f83fe1a69a48ae5e58e2f33bf3f31.png
+2025-05-20 18:01:10,199 INFO 55245 [-/::1/-/37ms POST /process-markdown] 图片已保存: /Users/zuohuaihan/Desktop/归档/z-blog-server/public/markdownFiles/images/a44fa57341d267a1cfb06308dbf42b3d.png
+2025-05-20 18:01:10,200 INFO 55245 [-/::1/-/38ms POST /process-markdown] 图片已保存: /Users/zuohuaihan/Desktop/归档/z-blog-server/public/markdownFiles/images/08c303902f14356c53ca7587963ee9f7.png
+2025-05-20 18:01:10,202 INFO 55245 [-/::1/-/40ms POST /process-markdown] 图片已保存: /Users/zuohuaihan/Desktop/归档/z-blog-server/public/markdownFiles/images/82d07b3cfd09def455e1906ccd6ce0f7.png
+2025-05-20 18:01:10,204 INFO 55245 [-/::1/-/42ms POST /process-markdown] 图片已保存: /Users/zuohuaihan/Desktop/归档/z-blog-server/public/markdownFiles/images/1136d8e57d205c186702a41467329bcb.png
+2025-05-20 18:01:10,205 INFO 55245 [-/::1/-/43ms POST /process-markdown] 图片已保存: /Users/zuohuaihan/Desktop/归档/z-blog-server/public/markdownFiles/images/eb7727e86963cd66a9d4ef72bb6208fd.png
+2025-05-20 18:01:10,205 INFO 55245 [-/::1/-/43ms POST /process-markdown] 图片已保存: /Users/zuohuaihan/Desktop/归档/z-blog-server/public/markdownFiles/images/82363a496c623238355de5229b50b037.png
+2025-05-20 18:18:46,605 ERROR 56577 [-/::1/-/15ms POST /process-markdown] Markdown 处理失败: Error: ENOENT: no such file or directory, open '/Users/zuohuaihan/Desktop/归档/z-blog-server/articles/demo.md'
+    at Object.openSync (node:fs:596:3)
+    at Object.readFileSync (node:fs:464:35)
+    at MarkdownService.processMarkdown (/Users/zuohuaihan/Desktop/归档/z-blog-server/app/service/markdown.js:17:40)
+    at MarkdownController.processMarkdown (/Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/markdown.js:46:56)
+    at Object.callFn (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg-core@5.5.1/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg-core@5.5.1/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/@eggjs+router@2.2.0/node_modules/@eggjs/router/lib/utils.js:17:21)
+    at wrappedController (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/@eggjs+router@2.2.0/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/koa-compose@3.2.1/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/koa-compose@3.2.1/node_modules/koa-compose/index.js:45:18) {
+  errno: -2,
+  syscall: 'open',
+  code: 'ENOENT',
+  path: '/Users/zuohuaihan/Desktop/归档/z-blog-server/articles/demo.md'
+}
+2025-05-20 18:19:19,435 ERROR 56644 [-/::1/-/15ms POST /process-markdown] Markdown 处理失败: Error: ENOENT: no such file or directory, open '/Users/zuohuaihan/Desktop/归档/z-blog-server/公众号开发流程(嵌入h5)--入门上手.md'
+    at Object.openSync (node:fs:596:3)
+    at Object.readFileSync (node:fs:464:35)
+    at MarkdownService.processMarkdown (/Users/zuohuaihan/Desktop/归档/z-blog-server/app/service/markdown.js:17:40)
+    at MarkdownController.processMarkdown (/Users/zuohuaihan/Desktop/归档/z-blog-server/app/controller/markdown.js:46:56)
+    at Object.callFn (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg-core@5.5.1/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg-core@5.5.1/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/@eggjs+router@2.2.0/node_modules/@eggjs/router/lib/utils.js:17:21)
+    at wrappedController (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/@eggjs+router@2.2.0/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/koa-compose@3.2.1/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/koa-compose@3.2.1/node_modules/koa-compose/index.js:45:18) {
+  errno: -2,
+  syscall: 'open',
+  code: 'ENOENT',
+  path: '/Users/zuohuaihan/Desktop/归档/z-blog-server/公众号开发流程(嵌入h5)--入门上手.md'
+}
+2025-05-20 18:24:07,484 INFO 56908 [-/::1/-/12ms POST /process-markdown] 保存新图片: 0b4c303f81ec39d14958ad52757af99c.png
+2025-05-20 18:24:07,486 INFO 56908 [-/::1/-/14ms POST /process-markdown] 保存新图片: 780480d267339b8699037949434d1313.png
+2025-05-20 18:24:07,487 INFO 56908 [-/::1/-/15ms POST /process-markdown] 保存新图片: 309f0e48f39a4f795b587d8f429cd559.png
+2025-05-20 18:24:07,488 INFO 56908 [-/::1/-/16ms POST /process-markdown] 保存新图片: a36c440edbba0f3138ab9cc31ce484bd.png
+2025-05-20 18:24:07,488 INFO 56908 [-/::1/-/16ms POST /process-markdown] 保存新图片: 250934553691a251ba1d0b8605b2dfbb.png
+2025-05-20 18:24:07,489 INFO 56908 [-/::1/-/17ms POST /process-markdown] 保存新图片: 8d95c260d0327b65918d176de727f897.png
+2025-05-20 18:24:07,490 INFO 56908 [-/::1/-/18ms POST /process-markdown] 保存新图片: 4e18bc32c288aad45f0d3c99a43ac527.png
+2025-05-20 18:24:07,491 INFO 56908 [-/::1/-/19ms POST /process-markdown] 保存新图片: 532f83fe1a69a48ae5e58e2f33bf3f31.png
+2025-05-20 18:24:07,492 INFO 56908 [-/::1/-/20ms POST /process-markdown] 保存新图片: a44fa57341d267a1cfb06308dbf42b3d.png
+2025-05-20 18:24:07,493 INFO 56908 [-/::1/-/21ms POST /process-markdown] 保存新图片: 08c303902f14356c53ca7587963ee9f7.png
+2025-05-20 18:24:07,494 INFO 56908 [-/::1/-/22ms POST /process-markdown] 保存新图片: 82d07b3cfd09def455e1906ccd6ce0f7.png
+2025-05-20 18:24:07,495 INFO 56908 [-/::1/-/23ms POST /process-markdown] 保存新图片: 1136d8e57d205c186702a41467329bcb.png
+2025-05-20 18:24:07,502 INFO 56908 [-/::1/-/29ms POST /process-markdown] 保存新图片: eb7727e86963cd66a9d4ef72bb6208fd.png
+2025-05-20 18:24:07,504 INFO 56908 [-/::1/-/32ms POST /process-markdown] 保存新图片: 82363a496c623238355de5229b50b037.png

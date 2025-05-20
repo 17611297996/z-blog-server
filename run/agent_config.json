@@ -158,7 +158,12 @@
     },
     "static": {
       "prefix": "/public/",
-      "dir": "/Users/zuohuaihan/Desktop/归档/z-blog-server/public",
+      "dir": [
+        {
+          "prefix": "/public",
+          "dir": "/Users/zuohuaihan/Desktop/归档/z-blog-server/app/public"
+        }
+      ],
       "dynamic": true,
       "preload": false,
       "buffer": false,
@@ -192,8 +197,10 @@
       "dependencies": {
         "egg": "^3.17.5",
         "egg-scripts": "2",
+        "egg-static": "^2.3.1",
         "js-yaml": "^4.1.0",
-        "markdown-it": "^14.1.0"
+        "markdown-it": "^14.1.0",
+        "mime-types": "^3.0.1"
       },
       "devDependencies": {
         "egg-bin": "6",
@@ -341,7 +348,7 @@
         "jsonp"
       ],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg@3.30.1/node_modules/egg/config/plugin.js",
       "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-onerror",
       "version": "2.4.0"
     },
@@ -352,7 +359,7 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg@3.30.1/node_modules/egg/config/plugin.js",
       "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-session",
       "version": "3.3.0"
     },
@@ -363,7 +370,7 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg@3.30.1/node_modules/egg/config/plugin.js",
       "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-i18n",
       "version": "2.1.1"
     },
@@ -374,7 +381,7 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg@3.30.1/node_modules/egg/config/plugin.js",
       "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-watcher",
       "version": "3.1.1",
       "dependents": [
@@ -390,7 +397,7 @@
         "schedule"
       ],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg@3.30.1/node_modules/egg/config/plugin.js",
       "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart",
       "version": "3.5.0"
     },
@@ -403,7 +410,7 @@
         "session"
       ],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg@3.30.1/node_modules/egg/config/plugin.js",
       "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security",
       "version": "3.7.0"
     },
@@ -418,7 +425,7 @@
       "env": [
         "local"
       ],
-      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg@3.30.1/node_modules/egg/config/plugin.js",
       "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-development",
       "version": "3.0.2"
     },
@@ -431,7 +438,7 @@
       ],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg@3.30.1/node_modules/egg/config/plugin.js",
       "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator",
       "version": "3.2.0"
     },
@@ -442,7 +449,7 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg@3.30.1/node_modules/egg/config/plugin.js",
       "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-schedule",
       "version": "4.0.1",
       "dependents": [
@@ -456,8 +463,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
-      "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg@3.30.1/node_modules/egg/config/plugin.js",
+      "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg-static@2.3.1/node_modules/egg-static",
       "version": "2.3.1"
     },
     "jsonp": {
@@ -469,7 +476,7 @@
         "security"
       ],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg@3.30.1/node_modules/egg/config/plugin.js",
       "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-jsonp",
       "version": "2.0.0"
     },
@@ -480,7 +487,7 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg/config/plugin.js",
+      "from": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/egg@3.30.1/node_modules/egg/config/plugin.js",
       "path": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-view",
       "version": "2.1.4"
     }
@@ -502,8 +509,10 @@
       "dependencies": {
         "egg": "^3.17.5",
         "egg-scripts": "2",
+        "egg-static": "^2.3.1",
         "js-yaml": "^4.1.0",
-        "markdown-it": "^14.1.0"
+        "markdown-it": "^14.1.0",
+        "mime-types": "^3.0.1"
       },
       "devDependencies": {
         "egg-bin": "6",

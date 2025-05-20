@@ -28,9 +28,18 @@ module.exports = appInfo => {
     // },
   };
   // 静态文件配置
+  // config.static = {
+  //   prefix: '/public/',
+  //   dir: path.join(appInfo.baseDir, 'public'),
+  // };
+  // 静态资源配置
   config.static = {
-    prefix: '/public/',
-    dir: path.join(appInfo.baseDir, 'public'),
+    dir: [
+      {
+        prefix: '/public', // Web 访问前缀
+        dir: path.join(appInfo.baseDir, 'app/public') // 本地存储目录
+      }
+    ]
   };
 
 
