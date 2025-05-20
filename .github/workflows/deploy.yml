@@ -19,37 +19,35 @@ jobs:
                   chmod 600 ~/.ssh/deploy_key
                   ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-            - name: 预清理目标目录
+            - name: 安全清理目标目录
               run: |
                   ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                    "rm -rf /www/wwwroot/egg-blog/empty* && \
-                     mkdir -p /www/wwwroot/egg-blog/.git"
+                    "mkdir -p /www/wwwroot/egg-blog || true && \
+                     find /www/wwwroot/egg-blog -type d -name 'empty' -delete 2>/dev/null"
 
-            - name: 增强同步
+            - name: 增强同步（不修改PM2配置）
               run: |
                   rsync -avz --progress \
                     --delete \
-                    --ignore-errors \
-                    --omit-dir-times \
-                    --no-perms \
-                    --filter='- empty*' \
                     --exclude='.git' \
                     --exclude='.github' \
                     --exclude='*.log' \
                     --exclude='node_modules/' \
+                    --exclude='empty/' \
+                    --exclude='*/empty/' \
+                    --exclude='.git/objects/' \
+                    --filter='- empty*' \
                     -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
                     $GITHUB_WORKSPACE/ \
                     ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
 
-            - name: 重启PM2服务
+            - name: 重启PM2服务（保持原配置）
               run: |
                   ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                    "export PATH=\$PATH:/usr/local/bin; \
-                     source ~/.bashrc 2>/dev/null || true; \
-                     PM2_BIN=\$(command -v pm2 || echo /usr/local/bin/pm2); \
-                     if [ ! -x \"\$PM2_BIN\" ]; then npm install pm2 -g --unsafe-perm; fi; \
-                     APP_HOME=\"/www/wwwroot/egg-blog\"; \
-                     cd \$APP_HOME || exit 1; \
-                     if \$PM2_BIN list | grep -q 'egg-blog'; then \$PM2_BIN reload ecosystem.config.js; else \$PM2_BIN start ecosystem.config.js; fi; \
-                     \$PM2_BIN save; \
-                     \$PM2_BIN logs --lines 10"
+                    "cd /www/wwwroot/egg-blog && \
+                     if pm2 list | grep -q 'egg-blog'; then \
+                       pm2 reload ecosystem.config.js --update-env; \
+                     else \
+                       pm2 start ecosystem.config.js; \
+                     fi; \
+                     pm2 save"
