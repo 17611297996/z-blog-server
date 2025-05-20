@@ -7,3 +7,5 @@ name: "ClusterClientNoResponseError"
 pid: 56417
 hostname: zuohuaihandeMacBook-Pro.local
 
+2025-05-21 01:48:17,517 WARN 56417 [agent:development] reload worker because /Users/zuohuaihan/Desktop/归档/z-blog-server/app/router.js change
+2025-05-21 01:48:17,314 INFO 56417 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/router.js","stat":{"dev":16777223,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":15611846,"size":512,"blocks":8,"atimeMs":1747763297280.315,"mtimeMs":1747763297247.4043,"ctimeMs":1747763297247.4043,"birthtimeMs":1747045079382.2686,"atime":"2025-05-20T17:48:17.280Z","mtime":"2025-05-20T17:48:17.247Z","ctime":"2025-05-20T17:48:17.247Z","birthtime":"2025-05-12T10:17:59.382Z"},"remove":false,"isDirectory":false,"isFile":true}
