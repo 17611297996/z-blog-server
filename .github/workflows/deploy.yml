@@ -23,17 +23,20 @@ jobs:
             - name: 安装 Rsync 工具
               run: sudo apt-get update && sudo apt-get install -y rsync
 
-            - name: 停止并删除 PM2 服务
+            - name: 停止 PM2 服务
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
-                  cd /www/wwwroot/egg-blog
-                  pm2 stop all || echo "停止 PM2 服务失败"
-                  pm2 delete all || echo "删除 PM2 进程失败"
-                  EOF
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+                  "cd /www/wwwroot/egg-blog && pm2 stop all || true && pm2 delete all || true"
+
+            - name: 清空服务器目录（保留空结构）
+              run: |
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+                  "rm -rf /www/wwwroot/egg-blog/* && mkdir -p /www/wwwroot/egg-blog/public/markdownFiles"
 
             - name: 同步文件到服务器
               run: |
                   rsync -avz --progress \
+                    --delete \
                     --exclude='node_modules/' \
                     --exclude='*.log' \
                     --rsync-path="sudo rsync" \
@@ -42,21 +45,7 @@ jobs:
                     $GITHUB_WORKSPACE/ \
                     ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
 
-            - name: 验证目标目录
-              run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "mkdir -p /www/wwwroot/egg-blog && ls -ld /www/wwwroot/egg-blog"
-
-            - name: 设置权限（排除 node_modules）
-              run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "find /www/wwwroot/egg-blog/ -path '/www/wwwroot/egg-blog/node_modules' -prune -o -exec chmod 777 {} +"
-
             - name: 启动 PM2 服务
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
-                  cd /www/wwwroot/egg-blog
-                  pm2 start npm --name "app" -- start
-                  pm2 save
-                  sudo env PATH=$PATH:/www/server/nvm/versions/node/v18.20.8/bin /www/server/nvm/versions/node/v18.20.8/lib/node_modules/pm2/bin/pm2 startup systemd -u ${{ secrets.SSH_USERNAME }} --hp /home/${{ secrets.SSH_USERNAME }}
-                  EOF
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+                  "cd /www/wwwroot/egg-blog && pm2 start npm --name 'app' -- start"
