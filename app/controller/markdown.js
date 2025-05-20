@@ -25,7 +25,7 @@ class MarkdownController extends Controller {
 
     //         const stats = fs.statSync(filePath);
     //         if (stats.isDirectory()) {
-    //             ctx.body = { success: false, error: '不能处理目录' };
+    //             ctx.body = { success: false, error: '不能处理目录!' };
     //             return;
     //         }
 
