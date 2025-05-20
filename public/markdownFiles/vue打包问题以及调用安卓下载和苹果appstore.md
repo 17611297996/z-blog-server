@@ -3,7 +3,7 @@ title: vue打包问题以及调用安卓下载和苹果appstore
 description: 记录了当时vue2语法编写文章，包括基本语法和一些实用技巧。
 date: 2025-04-15
 tags: [技术点滴, 前端开发, vue]
-sort: 2
+sort: 3
 ---
 
 ## 打包

@@ -1,0 +1,9 @@
+2025-05-17 04:30:14,097 INFO 7477 [Job#174742741381944525965575751] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js executing by app
+2025-05-17 04:30:14,297 INFO 7477 [Job#174742741381944525965575751] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js execute succeed, used 174ms. 
+2025-05-17 04:30:14,058 INFO 7475 [Timer] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 86386027ms at 2025-05-18 04:30:00.084
+2025-05-18 01:01:18,349 INFO 7477 [Job#1747501277459118390481065062] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/clean_log.js executing by app
+2025-05-18 01:01:18,337 INFO 7475 [Timer] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 82721824ms at 2025-05-19 00:00:00.160
+2025-05-18 01:01:18,665 INFO 7475 [Timer] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 82722652ms at 2025-05-19 00:00:01.317
+2025-05-18 01:01:18,536 INFO 7477 [Job#17475012783431183903026483562] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js executing by app
+2025-05-18 01:01:18,713 INFO 7477 [Job#1747501277459118390481065062] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/clean_log.js execute succeed, used 352ms. 
+2025-05-18 01:01:18,736 INFO 7477 [Job#17475012783431183903026483562] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js execute succeed, used 199ms. 
