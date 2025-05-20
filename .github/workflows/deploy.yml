@@ -44,4 +44,19 @@ jobs:
 
             - name: 验证目标目录
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+                  "mkdir -p /www/wwwroot/egg-blog && ls -ld /www/wwwroot/egg-blog"
+
+            - name: 设置权限（排除 node_modules）
+              run: |
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+                  "find /www/wwwroot/egg-blog/ -path '/www/wwwroot/egg-blog/node_modules' -prune -o -exec chmod 777 {} +"
+
+            - name: 启动 PM2 服务
+              run: |
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
+                  cd /www/wwwroot/egg-blog
+                  pm2 start npm --name "app" -- start
+                  pm2 save
+                  sudo env PATH=$PATH:/www/server/nvm/versions/node/v18.20.8/bin /www/server/nvm/versions/node/v18.20.8/lib/node_modules/pm2/bin/pm2 startup systemd -u ${{ secrets.SSH_USERNAME }} --hp /home/${{ secrets.SSH_USERNAME }}
+                  EOF
