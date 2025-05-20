@@ -27,8 +27,8 @@ jobs:
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
                   cd /www/wwwroot/egg-blog
-                  pm2 stop all || echo "停止 PM2 服务失败，可能服务未运行"
-                  pm2 delete all || echo "删除 PM2 进程失败，可能没有进程"
+                  pm2 stop all || echo "停止 PM2 服务失败"
+                  pm2 delete all || echo "删除 PM2 进程失败"
                   EOF
 
             - name: 同步文件到服务器
@@ -36,23 +36,12 @@ jobs:
                   rsync -avz --progress \
                     --exclude='node_modules/' \
                     --exclude='*.log' \
-                    --exclude='.git/' \
-                    --exclude='.github/' \
+                    --rsync-path="sudo rsync" \
+                    --chown=${{ secrets.SSH_USERNAME }}:${{ secrets.SSH_USERNAME }} \
                     -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
                     $GITHUB_WORKSPACE/ \
-                    ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/ \
-                    || echo "忽略非关键错误"
+                    ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
 
-            - name: 设置权限（排除 node_modules）
+            - name: 验证目标目录
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "find /www/wwwroot/egg-blog/ -path '/www/wwwroot/egg-blog/node_modules' -prune -o -exec chmod 777 {} +"
-
-            - name: 启动 PM2 服务
-              run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
-                  cd /www/wwwroot/egg-blog
-                  pm2 start npm --name "app" -- start
-                  pm2 save
-                  sudo env PATH=$PATH:/www/server/nvm/versions/node/v18.20.8/bin /www/server/nvm/versions/node/v18.20.8/lib/node_modules/pm2/bin/pm2 startup systemd -u ${{ secrets.SSH_USERNAME }} --hp /home/${{ secrets.SSH_USERNAME }}
-                  EOF
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER
