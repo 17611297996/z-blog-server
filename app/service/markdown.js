@@ -70,7 +70,7 @@ class MarkdownService extends Service {
                 }
 
                 // 返回 Web 可访问路径
-                return `![${altText}](/api/public/markdown-images/${fileName})`;
+                return `![${altText}](/mardownImg/public/markdown-images/${fileName})`;
             } catch (err) {
                 this.ctx.logger.error('图片处理失败:', err);
                 return match; // 返回原始内容保证文档不损坏
