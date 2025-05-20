@@ -1,8 +1,8 @@
-name: 部署到服务器
+name: 精准部署方案
 
 on:
     push:
-        branches: ['main']
+        branches: [main]
 
 jobs:
     deploy:
@@ -12,38 +12,44 @@ jobs:
             - name: 检出代码
               uses: actions/checkout@v4
 
-            - name: 设置 SSH 环境
+            - name: 配置SSH
               run: |
                   mkdir -p ~/.ssh
-                  chmod 700 ~/.ssh
-                  echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/github_actions_key
-                  chmod 600 ~/.ssh/github_actions_key
+                  echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/deploy_key
+                  chmod 600 ~/.ssh/deploy_key
                   ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-            - name: 安装 Rsync 工具
-              run: sudo apt-get update && sudo apt-get install -y rsync
-
-            - name: 停止 PM2 服务
+            - name: 预清理目标目录
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "cd /www/wwwroot/egg-blog && pm2 stop all || true && pm2 delete all || true"
+                  ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+                    "rm -rf /www/wwwroot/egg-blog/empty* && \
+                     mkdir -p /www/wwwroot/egg-blog/.git"
 
-            - name: 精准清理旧文件（保留 node_modules）
-              run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "sudo rsync -avm --include='node_modules/' --include='*/' --exclude='*' --delete-before /empty/ /www/wwwroot/egg-blog/"
-
-            - name: 同步新文件
+            - name: 增强同步
               run: |
                   rsync -avz --progress \
                     --delete \
-                    --exclude='node_modules/' \
+                    --ignore-errors \
+                    --omit-dir-times \
+                    --no-perms \
+                    --filter='- empty*' \
+                    --exclude='.git' \
+                    --exclude='.github' \
                     --exclude='*.log' \
-                    -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
+                    --exclude='node_modules/' \
+                    -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
                     $GITHUB_WORKSPACE/ \
                     ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
 
-            - name: 启动 PM2 服务
+            - name: 重启PM2服务
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "cd /www/wwwroot/egg-blog && pm2 start npm --name 'app' -- start"
+                  ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+                    "export PATH=\$PATH:/usr/local/bin; \
+                     source ~/.bashrc 2>/dev/null || true; \
+                     PM2_BIN=\$(command -v pm2 || echo /usr/local/bin/pm2); \
+                     if [ ! -x \"\$PM2_BIN\" ]; then npm install pm2 -g --unsafe-perm; fi; \
+                     APP_HOME=\"/www/wwwroot/egg-blog\"; \
+                     cd \$APP_HOME || exit 1; \
+                     if \$PM2_BIN list | grep -q 'egg-blog'; then \$PM2_BIN reload ecosystem.config.js; else \$PM2_BIN start ecosystem.config.js; fi; \
+                     \$PM2_BIN save; \
+                     \$PM2_BIN logs --lines 10"
