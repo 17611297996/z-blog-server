@@ -72,7 +72,7 @@ class MarkdownController extends Controller {
                 success: true,
                 data: {
                     content: processedContent,
-                    webPath: `/markdownFiles/${safeFileName}` // 前端可访问路径
+                    webPath: `/markdownFiles/${safeFileName}` // 前端界面可访问路径
                 }
             };
 
