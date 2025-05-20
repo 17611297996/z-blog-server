@@ -20,37 +20,29 @@ jobs:
                   chmod 600 ~/.ssh/github_actions_key
                   ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-            - name: 安装 Rsync 工具
-              run: sudo apt-get update && sudo apt-get install -y rsync
-
-            - name: 停止并删除 PM2 服务
+            - name: 清理目标残留（增强版）
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
-                  cd /www/wwwroot/egg-blog || exit 1
-                  pm2 stop all || echo "PM2服务未运行"
-                  pm2 delete all || echo "无PM2进程需要删除"
-                  EOF
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<'EOL'
+                  TARGET_DIR="/www/wwwroot/egg-blog"
+                  # 删除所有层级的node_modules
+                  find "$TARGET_DIR" -type d -name 'node_modules' -exec rm -rf {} + 2>/dev/null
+                  # 创建空目录占位防止同步冲突
+                  mkdir -p "$TARGET_DIR/node_modules"
+                  EOL
 
-            - name: 清理目标空目录（新增）
-              run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                    "find /www/wwwroot/egg-blog -type d -name 'empty' -delete 2>/dev/null"
-
-            - name: 增强同步（保持PM2配置）
+            - name: 智能同步文件
               run: |
                   rsync -avz --progress \
                     --delete \
-                    --exclude='node_modules/' \
+                    --filter='- node_modules' \         # 排除所有层级node_modules
                     --exclude='*.log' \
-                    --exclude='empty/' \          # 排除一级空目录
-                    --exclude='*/empty/' \        # 排除多级子目录空目录
-                    --filter='- empty*' \         # 强制过滤所有empty相关路径
+                    --exclude='.git' \
+                    --exclude='.github' \
                     -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
                     $GITHUB_WORKSPACE/ \
-                    ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/ \
-                    || echo "忽略非关键错误"
+                    ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
 
-            - name: 启动 PM2 服务（保持原配置）
+            - name: 重启 PM2 服务
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
                   cd /www/wwwroot/egg-blog || exit 1
