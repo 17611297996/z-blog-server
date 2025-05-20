@@ -41,10 +41,10 @@ jobs:
                     ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/ \
                     || echo "忽略非关键错误"
 
-            **- name: 强制设置777权限**
+            - name: 强制设置777权限**
               run: |
-                ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                "chmod -R 777 /www/wwwroot/egg-blog/"
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+                  "chmod -R 777 /www/wwwroot/egg-blog/"
 
             - name: 启动 PM2 服务
               run: |
