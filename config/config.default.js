@@ -43,6 +43,7 @@ module.exports = appInfo => {
   };
 
 
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
