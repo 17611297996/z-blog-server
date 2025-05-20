@@ -17,7 +17,7 @@ class MarkdownController extends Controller {
     //         const publicDir = path.join(ctx.app.baseDir, 'public');
     //         const filePath = path.join(publicDir, 'markdownFiles', fileName);
 
-    //         // 检查文件是否存在并且是文件而不是目录
+    //         // 检查文件是否存在并且是文件而不是目录文件夹
     //         if (!fs.existsSync(filePath)) {
     //             ctx.body = { success: false, error: '文件不存在' };
     //             return;
