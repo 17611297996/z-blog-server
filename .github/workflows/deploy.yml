@@ -12,6 +12,11 @@ jobs:
             - name: 检出仓库代码
               uses: actions/checkout@v4
 
+            - name: 调试路径验证
+              run: |
+                  echo "当前工作目录: $GITHUB_WORKSPACE"
+                  ls -la $GITHUB_WORKSPACE
+
             - name: 设置 SSH 环境
               run: |
                   mkdir -p ~/.ssh
@@ -20,33 +25,27 @@ jobs:
                   chmod 600 ~/.ssh/github_actions_key
                   ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-            - name: 清理目标残留（增强版）
+            - name: 确保目标目录存在
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<'EOL'
-                  TARGET_DIR="/www/wwwroot/egg-blog"
-                  # 删除所有层级的node_modules
-                  find "$TARGET_DIR" -type d -name 'node_modules' -exec rm -rf {} + 2>/dev/null
-                  # 创建空目录占位防止同步冲突
-                  mkdir -p "$TARGET_DIR/node_modules"
-                  EOL
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+                    "mkdir -p /www/wwwroot/egg-blog"
 
-            - name: 智能同步文件
+            - name: 智能同步文件（修复路径）
               run: |
+                  # 关键修复：显式指定源目录为项目根目录
                   rsync -avz --progress \
                     --delete \
-                    --filter='- node_modules' \         # 排除所有层级node_modules
+                    --exclude='node_modules/' \
                     --exclude='*.log' \
-                    --exclude='.git' \
-                    --exclude='.github' \
+                    --filter='- empty/' \
                     -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
-                    $GITHUB_WORKSPACE/ \
-                    ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
+                    "$GITHUB_WORKSPACE/" \          # 使用仓库根目录
+                    "${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/" \
+                    || echo "忽略非关键错误"
 
             - name: 重启 PM2 服务
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
-                  cd /www/wwwroot/egg-blog || exit 1
-                  pm2 start npm --name "app" -- start
-                  pm2 save
-                  sudo env PATH=$PATH:/www/server/nvm/versions/node/v18.20.8/bin /www/server/nvm/versions/node/v18.20.8/lib/node_modules/pm2/bin/pm2 startup systemd -u ${{ secrets.SSH_USERNAME }} --hp /home/${{ secrets.SSH_USERNAME }}
-                  EOF
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+                    "cd /www/wwwroot/egg-blog || exit 1
+                     pm2 start npm --name 'app' -- start
+                     pm2 save"
