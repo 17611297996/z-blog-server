@@ -189,7 +189,7 @@
       "prefix": "/public/",
       "dir": [
         {
-          "prefix": "/public",
+          "prefix": "/public/markdown-images",
           "dir": "/Users/zuohuaihan/Desktop/归档/z-blog-server/app/public"
         }
       ],
