@@ -1,0 +1,80 @@
+2025-05-20 16:58:28,667 WARN 49411 [-/::1/-/5ms POST /process-markdown] missing csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2025-05-20 16:58:28,669 WARN 49411 [-/::1/-/7ms POST /process-markdown] nodejs.ForbiddenError: missing csrf token
+    at Object.throw (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/app/extend/context.js:165:32)
+    at csrf (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/lib/middlewares/csrf.js:37:9)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+    at /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+message: "missing csrf token"
+pid: 49411
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-20 17:02:41,574 WARN 49861 [-/::1/-/5ms POST /process-markdown] missing csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2025-05-20 17:02:41,576 WARN 49861 [-/::1/-/6ms POST /process-markdown] nodejs.ForbiddenError: missing csrf token
+    at Object.throw (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/app/extend/context.js:165:32)
+    at csrf (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/lib/middlewares/csrf.js:37:9)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+    at /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+message: "missing csrf token"
+pid: 49861
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-20 17:06:38,728 WARN 50174 [-/::1/-/5ms POST /process-markdown] missing csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2025-05-20 17:06:38,730 WARN 50174 [-/::1/-/7ms POST /process-markdown] nodejs.ForbiddenError: missing csrf token
+    at Object.throw (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/app/extend/context.js:165:32)
+    at csrf (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/lib/middlewares/csrf.js:37:9)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+    at /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+message: "missing csrf token"
+pid: 50174
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-20 17:07:51,573 WARN 50276 [-/::1/-/6ms POST /process-markdown] missing csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2025-05-20 17:07:51,575 WARN 50276 [-/::1/-/8ms POST /process-markdown] nodejs.ForbiddenError: missing csrf token
+    at Object.throw (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/app/extend/context.js:165:32)
+    at csrf (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/lib/middlewares/csrf.js:37:9)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+    at /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+message: "missing csrf token"
+pid: 50276
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-20 17:08:18,004 WARN 50388 [-/::1/-/6ms POST /process-markdown] missing csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2025-05-20 17:08:18,006 WARN 50388 [-/::1/-/7ms POST /process-markdown] nodejs.ForbiddenError: missing csrf token
+    at Object.throw (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/app/extend/context.js:165:32)
+    at csrf (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/lib/middlewares/csrf.js:37:9)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+    at /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/koa-compose/index.js:42:32)
+message: "missing csrf token"
+pid: 50388
+hostname: zuohuaihandeMacBook-Pro.local
+

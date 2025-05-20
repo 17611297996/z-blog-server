@@ -1,27 +1,9 @@
 {
   "keys": "/Users/zuohuaihan/Desktop/归档/z-blog-server/config/config.default.js",
   "middleware": "/Users/zuohuaihan/Desktop/归档/z-blog-server/config/config.default.js",
-  "static": {
-    "prefix": "/Users/zuohuaihan/Desktop/归档/z-blog-server/config/config.default.js",
-    "dir": "/Users/zuohuaihan/Desktop/归档/z-blog-server/config/config.default.js",
-    "dynamic": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/config.default.js",
-    "preload": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/config.default.js",
-    "buffer": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/config.default.js",
-    "maxFiles": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/config.default.js"
-  },
-  "session": {
-    "maxAge": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-session/config/config.default.js",
-    "key": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-session/config/config.default.js",
-    "httpOnly": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-session/config/config.default.js",
-    "encrypt": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-session/config/config.default.js",
-    "logValue": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-session/config/config.default.js"
-  },
   "security": {
-    "domainWhiteList": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js",
-    "protocolWhiteList": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js",
-    "defaultMiddleware": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js",
     "csrf": {
-      "enable": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js",
+      "enable": "/Users/zuohuaihan/Desktop/归档/z-blog-server/config/config.default.js",
       "type": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js",
       "ignoreJSON": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js",
       "useSession": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js",
@@ -37,6 +19,9 @@
         "signed": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js"
       }
     },
+    "domainWhiteList": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js",
+    "protocolWhiteList": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js",
+    "defaultMiddleware": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js",
     "xframe": {
       "enable": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js",
       "value": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js"
@@ -76,6 +61,21 @@
       "hostnameExceptionList": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js",
       "checkAddress": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js"
     }
+  },
+  "static": {
+    "prefix": "/Users/zuohuaihan/Desktop/归档/z-blog-server/config/config.default.js",
+    "dir": "/Users/zuohuaihan/Desktop/归档/z-blog-server/config/config.default.js",
+    "dynamic": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/config.default.js",
+    "preload": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/config.default.js",
+    "buffer": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/config.default.js",
+    "maxFiles": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-static/config/config.default.js"
+  },
+  "session": {
+    "maxAge": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-session/config/config.default.js",
+    "key": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-session/config/config.default.js",
+    "httpOnly": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-session/config/config.default.js",
+    "encrypt": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-session/config/config.default.js",
+    "logValue": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-session/config/config.default.js"
   },
   "helper": {
     "shtml": "/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-security/config/config.default.js"

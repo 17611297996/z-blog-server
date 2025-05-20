@@ -17,12 +17,22 @@ module.exports = appInfo => {
 
   // add your middleware config here
   config.middleware = [];
-
+  // CSRF 配置
+  config.security = {
+    csrf: {
+      enable: false
+    }
+    // ignore: (ctx) => {
+    //   // 忽略特定路径的 CSRF 检查
+    //   return ctx.url === '/process-markdown';
+    // },
+  };
   // 静态文件配置
   config.static = {
     prefix: '/public/',
     dir: path.join(appInfo.baseDir, 'public'),
   };
+
 
   // add your user config here
   const userConfig = {

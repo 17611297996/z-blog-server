@@ -8,4 +8,5 @@ module.exports = app => {
   router.get('/api/markdown-content/:filename', controller.article.getContent);
   router.get('/api/basicInfo', controller.article.getBasicInfo);
   router.get('/api/category', controller.article.getCategory);
+  router.post('/process-markdown', controller.markdown.processMarkdown);
 };
