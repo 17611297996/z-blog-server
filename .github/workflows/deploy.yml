@@ -1,4 +1,4 @@
-、name: 部署到服务器
+name: 部署到服务器
 
 on:
     push:
