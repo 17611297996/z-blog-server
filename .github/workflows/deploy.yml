@@ -7,9 +7,10 @@ on:
 jobs:
     deploy:
         runs-on: ubuntu-latest
+        timeout-minutes: 20
 
         steps:
-            - name: 检出仓库代码
+            - name: 检出代码
               uses: actions/checkout@v4
 
             - name: 设置 SSH 环境
@@ -20,56 +21,40 @@ jobs:
                   chmod 600 ~/.ssh/github_actions_key
                   ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-            - name: 强制终止旧进程
+            - name: 暴力终止旧进程（保留 node_modules）
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  << 'EOF'
-                  pkill -9 -f 'node /www/wwwroot/egg-blog/app.js'
-                  pm2 kill -f || true
-                  rm -rf /www/wwwroot/egg-blog/.pm2
-                  EOF
+                  "pkill -9 -f 'node --no-deprecation' && \
+                   pkill -9 pm2"
 
-            - name: 同步代码（修复版）
+            - name: 配置目录权限（保留 node_modules）
+              run: |
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+                  "sudo chown -R ${{ secrets.SSH_USERNAME }} /www/wwwroot/egg-blog && \
+                   chmod -R 755 /www/wwwroot/egg-blog/node_modules"
+
+            - name: 安全清理（绝对保留 node_modules）
+              run: |
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+                  "rsync -av --delete -e 'ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }}' \
+                  --exclude='node_modules/' \
+                  --exclude='*.log' \
+                  /empty/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/"
+
+            - name: 增量同步代码（不覆盖 node_modules）
               run: |
                   rsync -avz --progress \
+                    --bwlimit=500 \
                     --delete \
-                    --include='ecosystem.config.js' \
                     --exclude='node_modules/' \
                     --exclude='*.log' \
-                    --exclude='.*' \  # 排除隐藏文件
                     -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
-                    "$GITHUB_WORKSPACE/" \
-                    "${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/"
+                    $GITHUB_WORKSPACE/ \
+                    ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
 
-            - name: 创建PM2配置文件
+            - name: 优化启动服务（禁用 PM2 守护进程）
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "mkdir -p /www/wwwroot/egg-blog && \
-                  [ ! -f /www/wwwroot/egg-blog/ecosystem.config.js ] && \
-                  echo 'module.exports = {
-                    apps: [{
-                      name: \"app\",
-                      script: \"./app.js\",
-                      cwd: \"/www/wwwroot/egg-blog\",
-                      error_file: \"logs/err.log\",
-                      out_file: \"logs/out.log\",
-                      autorestart: true,
-                      max_memory_restart: \"1G\",
-                      env_production: {
-                        NODE_ENV: \"production\"
-                      }
-                    }]
-                  }' > /www/wwwroot/egg-blog/ecosystem.config.js"
-
-            - name: 重启服务
-              run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  << 'EOF'
-                  sleep 3
-                  if pm2 list | grep -q app; then
-                    pm2 reload app --update-env
-                  else
-                    pm2 start /www/wwwroot/egg-blog/ecosystem.config.js --env production
-                  fi
-                  pm2 flush
-                  EOF
+                  "cd /www/wwwroot/egg-blog && \
+                  pm2 start npm --name 'app' -- start --no-daemon && \
+                  pm2 save"
