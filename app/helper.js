@@ -1,4 +1,4 @@
-// app/helper.js
+// app/helper.js。
 const fs = require('fs');
 const path = require('path');
 
