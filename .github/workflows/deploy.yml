@@ -7,6 +7,7 @@ on:
 jobs:
     deploy:
         runs-on: ubuntu-latest
+        timeout-minutes: 30
 
         steps:
             - name: 检出仓库代码
@@ -20,27 +21,42 @@ jobs:
                   chmod 600 ~/.ssh/github_actions_key
                   ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-            - name: 配置服务器目录权限（仅需一次）
+            - name: 停止 PM2 服务（彻底终止）
+              run: |
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
+                  "pm2 kill && pkill -9 -f 'node --no-deprecation' && pkill -9 -f 'egg-scripts'"
+
+            - name: 配置服务器目录权限
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
                   "sudo chown -R ${{ secrets.SSH_USERNAME }}:${{ secrets.SSH_USERNAME }} /www/wwwroot/egg-blog"
 
-            - name: 强制清理服务器文件（保留 node_modules）
+            - name: 安全清理文件（严格保留 node_modules）
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "find /www/wwwroot/egg-blog -mindepth 1 -maxdepth 1 -not -name 'node_modules' -exec rm -rf {} +"
+                  "rsync -av --delete -e 'ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }}' \
+                  --exclude='node_modules/' \
+                  --exclude='*.log' \
+                  /empty/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/"
 
-            - name: 同步文件（无需 sudo）
+            - name: 增量同步代码
               run: |
                   rsync -avz --progress \
+                    --bwlimit=1000 \
                     --delete \
                     --exclude='node_modules/' \
                     --exclude='*.log' \
+                    --exclude='*.git' \
+                    --exclude='*.github' \
+                    --filter='- *.tmp' \
                     -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
                     $GITHUB_WORKSPACE/ \
                     ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
 
-            - name: 重启 PM2 服务
+            - name: 优化重启服务
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "cd /www/wwwroot/egg-blog && pm2 reload app --update-env"
+                  "cd /www/wwwroot/egg-blog && \
+                  pm2 start npm --name 'app' -- start --no-daemon && \
+                  pm2 save && \
+                  pm2 startup systemd -u ${{ secrets.SSH_USERNAME }} --hp /home/${{ secrets.SSH_USERNAME }}"
