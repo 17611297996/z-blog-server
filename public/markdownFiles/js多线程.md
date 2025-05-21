@@ -3,7 +3,7 @@ title: JS多线程了解(worker)
 description: Web Worker 的作用，就是为 JavaScript 创造多线程环境，允许主线程创建 Worker 线程
 date: 2025-03-20
 tags: [技术点滴, 前端开发, Javascript]
-sort: 2
+sort: 3
 ---
 
 ## 线程

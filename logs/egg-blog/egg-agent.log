@@ -74,3 +74,123 @@ hostname: zuohuaihandeMacBook-Pro.local
 2025-05-21 02:52:33,314 INFO 56417 [egg-watcher] Received a change event from eventSource: {"event":"rename","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/public/markdown-images/1136d8e57d205c186702a41467329bcb.png","stat":{"dev":16777223,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":16228686,"size":102431,"blocks":208,"atimeMs":1747767153247.1885,"mtimeMs":1747767153247.3225,"ctimeMs":1747767153247.3225,"birthtimeMs":1747767153247.1885,"atime":"2025-05-20T18:52:33.247Z","mtime":"2025-05-20T18:52:33.247Z","ctime":"2025-05-20T18:52:33.247Z","birthtime":"2025-05-20T18:52:33.247Z"},"remove":false,"isDirectory":false,"isFile":true}
 2025-05-21 02:52:33,316 INFO 56417 [egg-watcher] Received a change event from eventSource: {"event":"rename","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/public/markdown-images/eb7727e86963cd66a9d4ef72bb6208fd.png","stat":{"dev":16777223,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":16228687,"size":25530,"blocks":56,"atimeMs":1747767153249.2495,"mtimeMs":1747767153249.4482,"ctimeMs":1747767153249.4482,"birthtimeMs":1747767153249.2495,"atime":"2025-05-20T18:52:33.249Z","mtime":"2025-05-20T18:52:33.249Z","ctime":"2025-05-20T18:52:33.249Z","birthtime":"2025-05-20T18:52:33.249Z"},"remove":false,"isDirectory":false,"isFile":true}
 2025-05-21 02:52:33,316 INFO 56417 [egg-watcher] Received a change event from eventSource: {"event":"rename","path":"/Users/zuohuaihan/Desktop/归档/z-blog-server/app/public/markdown-images/82363a496c623238355de5229b50b037.png","stat":{"dev":16777223,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":16228688,"size":108924,"blocks":216,"atimeMs":1747767153250.2817,"mtimeMs":1747767153250.4507,"ctimeMs":1747767153250.4507,"birthtimeMs":1747767153250.2817,"atime":"2025-05-20T18:52:33.250Z","mtime":"2025-05-20T18:52:33.250Z","ctime":"2025-05-20T18:52:33.250Z","birthtime":"2025-05-20T18:52:33.250Z"},"remove":false,"isDirectory":false,"isFile":true}
+2025-05-21 03:56:31,146 ERROR 56417 nodejs.ClusterClientNoResponseError: client no response in 1801011ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/cluster-client@3.7.0/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 56417
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-21 04:13:50,998 ERROR 56417 nodejs.ClusterClientNoResponseError: client no response in 979758ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/cluster-client@3.7.0/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 56417
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-21 04:31:31,081 ERROR 56417 nodejs.ClusterClientNoResponseError: client no response in 959967ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/cluster-client@3.7.0/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 56417
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-21 04:46:52,777 ERROR 56417 nodejs.ClusterClientNoResponseError: client no response in 861642ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/cluster-client@3.7.0/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 56417
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-21 05:27:15,021 ERROR 56417 nodejs.ClusterClientNoResponseError: client no response in 2422217ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/cluster-client@3.7.0/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 56417
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-21 07:27:29,075 ERROR 56417 nodejs.ClusterClientNoResponseError: client no response in 7213977ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/cluster-client@3.7.0/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 56417
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-21 09:18:23,013 ERROR 56417 nodejs.ClusterClientNoResponseError: client no response in 6653874ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/cluster-client@3.7.0/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 56417
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-21 11:12:02,027 ERROR 56417 nodejs.ClusterClientNoResponseError: client no response in 6798965ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/cluster-client@3.7.0/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 56417
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-21 11:19:25,020 ERROR 56417 nodejs.ClusterClientNoResponseError: client no response in 442978ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/cluster-client@3.7.0/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 56417
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-21 12:20:28,033 ERROR 56417 nodejs.ClusterClientNoResponseError: client no response in 3622984ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/cluster-client@3.7.0/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 56417
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-21 13:21:31,023 ERROR 56417 nodejs.ClusterClientNoResponseError: client no response in 3662973ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/cluster-client@3.7.0/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 56417
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-21 14:15:47,179 ERROR 56417 nodejs.ClusterClientNoResponseError: client no response in 3256150ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/cluster-client@3.7.0/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 56417
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-21 14:22:33,032 ERROR 56417 nodejs.ClusterClientNoResponseError: client no response in 405814ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/cluster-client@3.7.0/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 56417
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-21 14:23:35,472 ERROR 56417 nodejs.ClusterClientNoResponseError: client no response in 62425ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/cluster-client@3.7.0/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 56417
+hostname: zuohuaihandeMacBook-Pro.local
+
+2025-05-21 14:55:32,570 ERROR 56417 nodejs.ClusterClientNoResponseError: client no response in 1917015ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/.pnpm/cluster-client@3.7.0/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+name: "ClusterClientNoResponseError"
+pid: 56417
+hostname: zuohuaihandeMacBook-Pro.local
+
