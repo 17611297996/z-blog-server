@@ -29,20 +29,19 @@ jobs:
                   rm -rf /www/wwwroot/egg-blog/.pm2
                   EOF
 
-            - name: 同步代码（含PM2配置）
+            - name: 同步代码（修复版）
               run: |
                   rsync -avz --progress \
                     --delete \
+                    --include='ecosystem.config.js' \
                     --exclude='node_modules/' \
                     --exclude='*.log' \
-                    --exclude='.env*' \
-                    --include='.env.production' \
-                    --include='ecosystem.config.js'  # 确保同步配置文件
+                    --exclude='.*' \  # 排除隐藏文件
                     -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
-                    $GITHUB_WORKSPACE/ \
-                    ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
+                    "$GITHUB_WORKSPACE/" \
+                    "${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/"
 
-            - name: 创建PM2配置文件（双重保障）
+            - name: 创建PM2配置文件
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
                   "mkdir -p /www/wwwroot/egg-blog && \
@@ -62,20 +61,15 @@ jobs:
                     }]
                   }' > /www/wwwroot/egg-blog/ecosystem.config.js"
 
-            - name: 重启服务（增强版）
+            - name: 重启服务
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
                   << 'EOF'
-                  # 等待文件完全同步
                   sleep 3
-
-                  # 检查配置文件有效性
-                  if ! pm2 list | grep -q app; then
-                    pm2 start /www/wwwroot/egg-blog/ecosystem.config.js --env production
-                  else
+                  if pm2 list | grep -q app; then
                     pm2 reload app --update-env
+                  else
+                    pm2 start /www/wwwroot/egg-blog/ecosystem.config.js --env production
                   fi
-
-                  # 清理旧日志
                   pm2 flush
                   EOF
