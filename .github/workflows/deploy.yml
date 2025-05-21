@@ -1,4 +1,4 @@
-name: 部署到服务器
+、name: 部署到服务器
 
 on:
     push:
@@ -20,37 +20,80 @@ jobs:
                   chmod 600 ~/.ssh/github_actions_key
                   ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-            - name: 进入维护模式（可选）
+            - name: 强制终止旧进程（新增）
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "pm2 reload ecosystem.config.js --env maintenance"
+                  << 'EOF'
+                  # 终止所有相关进程
+                  pkill -9 -f 'node /www/wwwroot/egg-blog/app.js'
 
-            - name: 停止PM2进程
+                  # 强制清理PM2进程
+                  pm2 kill || true
+                  pm2 flush || true
+
+                  # 删除残留文件
+                  rm -f /www/wwwroot/egg-blog/pm2.pid
+                  rm -rf /www/wwwroot/egg-blog/.pm2
+                  EOF
+
+            - name: 配置服务器目录权限（仅需一次）
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "pm2 stop app"
+                  "sudo chown -R ${{ secrets.SSH_USERNAME }}:${{ secrets.SSH_USERNAME }} /www/wwwroot/egg-blog"
 
             - name: 强制清理服务器文件（保留 node_modules）
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "find /www/wwwroot/egg-blog -mindepth 1 -maxdepth 1 -not -name 'node_modules' -exec rm -rf {} +"
+                  "find /www/wwwroot/egg-blog -mindepth 1 -maxdepth 1 -not -name 'node_modules' -not -name '.git' -exec rm -rf {} +"
 
-            - name: 同步文件
+            - name: 同步文件（包含PM2配置）
               run: |
                   rsync -avz --progress \
                     --delete \
                     --exclude='node_modules/' \
                     --exclude='*.log' \
+                    --exclude='.env*' \
+                    --include='.env.production' \
                     -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
                     $GITHUB_WORKSPACE/ \
                     ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
 
-            - name: 启动服务
+            - name: 创建PM2配置文件（如果不存在）
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "pm2 start /www/wwwroot/egg-blog/app.js --name app --update-env"
+                  "mkdir -p /www/wwwroot/egg-blog && \
+                  [ ! -f /www/wwwroot/egg-blog/ecosystem.config.js ] && \
+                  echo 'module.exports = {
+                    apps: [{
+                      name: \"app\",
+                      script: \"./app.js\",
+                      cwd: \"/www/wwwroot/egg-blog\",
+                      error_file: \"logs/err.log\",
+                      out_file: \"logs/out.log\",
+                      autorestart: true,
+                      max_memory_restart: \"1G\",
+                      env_production: {
+                        NODE_ENV: \"production\"
+                      }
+                    }]
+                  }' > /www/wwwroot/egg-blog/ecosystem.config.js"
 
-            - name: 恢复维护模式（可选）
+            - name: 重启 PM2 服务（增强版）
               run: |
                   ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "pm2 reload ecosystem.config.js --env production"
+                  << 'EOF'
+                  # 等待文件同步完成
+                  sleep 3
+                    
+                  # 启动前检查
+                  if pm2 list | grep -q app; then
+                    pm2 reload app --update-env || \
+                    pm2 delete app && \
+                    pm2 start ecosystem.config.js --env production
+                  else
+                    pm2 start ecosystem.config.js --env production
+                  fi
+
+                  # 清理日志
+                  pm2 flush
+                  EOF
