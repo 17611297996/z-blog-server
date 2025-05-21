@@ -7,10 +7,9 @@ on:
 jobs:
     deploy:
         runs-on: ubuntu-latest
-        timeout-minutes: 20
 
         steps:
-            - name: 检出代码
+            - name: 检出仓库代码
               uses: actions/checkout@v4
 
             - name: 设置 SSH 环境
@@ -21,40 +20,50 @@ jobs:
                   chmod 600 ~/.ssh/github_actions_key
                   ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-            - name: 暴力终止旧进程（保留 node_modules）
-              run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "pkill -9 -f 'node --no-deprecation' && \
-                   pkill -9 pm2"
+            - name: 安装 Rsync 工具
+              run: sudo apt-get update && sudo apt-get install -y rsync
 
-            - name: 配置目录权限（保留 node_modules）
+            - name: 停止 PM2 服务
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "sudo chown -R ${{ secrets.SSH_USERNAME }} /www/wwwroot/egg-blog && \
-                   chmod -R 755 /www/wwwroot/egg-blog/node_modules"
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
+                  cd /www/wwwroot/egg-blog
+                  pm2 stop app || echo "无需停止"
+                  pm2 delete app || echo "无需删除"
+                  pkill -f "npm start" || echo "无残留进程"
+                  EOF
 
-            - name: 安全清理（绝对保留 node_modules）
+            - name: 清理服务器旧文件（保留node_modules）
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "rsync -av --delete -e 'ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }}' \
-                  --exclude='node_modules/' \
-                  --exclude='*.log' \
-                  /empty/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/"
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
+                  cd /www/wwwroot/egg-blog
+                  # 保留 node_modules 和隐藏文件
+                  find . -maxdepth 1 \
+                    ! -name 'node_modules' \
+                    ! -name '.' \
+                    ! -name '..' \
+                    -exec rm -rf {} +
+                  EOF
 
-            - name: 增量同步代码（不覆盖 node_modules）
+            - name: 同步文件到服务器
               run: |
-                  rsync -avz --progress \
-                    --bwlimit=500 \
-                    --delete \
+                  rsync -avz --delete --progress \
                     --exclude='node_modules/' \
                     --exclude='*.log' \
                     -e "ssh -i ~/.ssh/github_actions_key -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" \
                     $GITHUB_WORKSPACE/ \
                     ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:/www/wwwroot/egg-blog/
 
-            - name: 优化启动服务（禁用 PM2 守护进程）
+            - name: 启动 PM2 服务
               run: |
-                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} \
-                  "cd /www/wwwroot/egg-blog && \
-                  pm2 start npm --name 'app' -- start --no-daemon && \
-                  pm2 save"
+                  ssh -i ~/.ssh/github_actions_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} <<EOF
+                  cd /www/wwwroot/egg-blog
+                  # 检查是否已存在进程
+                  if pm2 list | grep -q app; then
+                    pm2 reload app --update-env
+                  else
+                    pm2 start npm --name "app" -- start
+                  fi
+                  pm2 save
+                  # 避免重复设置启动项（建议提前手动设置）
+                  # sudo env PATH=$PATH:/www/server/nvm/versions/node/v18.20.8/bin /www/server/nvm/versions/node/v18.20.8/lib/node_modules/pm2/bin/pm2 startup systemd -u ${{ secrets.SSH_USERNAME }} --hp /home/${{ secrets.SSH_USERNAME }}
+                  EOF
