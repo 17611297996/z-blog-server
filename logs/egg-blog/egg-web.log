@@ -1,33 +1,18 @@
-2025-05-23 00:31:51,581 INFO 87463 [egg-logrotator] app logger reload: got log-reload message
-2025-05-23 01:32:59,100 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
-2025-05-23 01:32:59,105 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
-2025-05-23 03:33:25,834 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
-2025-05-23 03:33:25,850 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
-2025-05-23 04:17:25,396 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
-2025-05-23 04:17:25,816 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
-2025-05-23 06:17:56,718 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
-2025-05-23 06:17:56,727 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
-2025-05-23 06:17:57,006 INFO 87463 [-/127.0.0.1/-/63ms SCHEDULE /__schedule?path=/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js&type=worker&cron=0%2030%204%20*%20*%20*&disable=false&immediate=false] [egg-multipart:CleanTmpdir] start clean tmpdir: "/var/folders/g4/92hbzfzs2ds26wptp4my4j0r0000gn/T/egg-multipart-tmp/egg-blog"
-2025-05-23 06:17:57,198 INFO 87463 [-/127.0.0.1/-/259ms SCHEDULE /__schedule?path=/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js&type=worker&cron=0%2030%204%20*%20*%20*&disable=false&immediate=false] [egg-multipart:CleanTmpdir] end
-2025-05-23 07:29:28,573 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
-2025-05-23 07:29:28,579 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
-2025-05-23 09:16:13,761 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
-2025-05-23 09:16:13,764 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
-2025-05-23 11:17:20,443 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
-2025-05-23 11:17:20,457 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
-2025-05-23 12:18:28,825 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
-2025-05-23 12:18:28,846 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
-2025-05-23 12:30:33,857 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
-2025-05-23 12:30:33,868 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
-2025-05-23 13:19:36,120 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
-2025-05-23 13:19:36,123 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
-2025-05-23 14:20:44,195 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
-2025-05-23 14:20:44,221 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
-2025-05-23 14:26:49,918 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
-2025-05-23 14:26:49,938 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
-2025-05-23 15:21:46,562 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
-2025-05-23 15:21:46,570 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
-2025-05-23 16:22:48,524 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
-2025-05-23 16:22:48,524 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
-2025-05-23 16:29:40,105 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
-2025-05-23 16:29:40,106 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-26 00:47:50,486 INFO 87463 [egg-logrotator] app logger reload: got log-reload message
+2025-05-26 01:48:53,047 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-26 01:48:53,047 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-26 03:49:08,014 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-26 03:49:08,014 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-26 05:49:31,032 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-26 05:49:31,033 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-26 05:49:31,085 INFO 87463 [-/127.0.0.1/-/29ms SCHEDULE /__schedule?path=/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js&type=worker&cron=0%2030%204%20*%20*%20*&disable=false&immediate=false] [egg-multipart:CleanTmpdir] start clean tmpdir: "/var/folders/g4/92hbzfzs2ds26wptp4my4j0r0000gn/T/egg-multipart-tmp/egg-blog"
+2025-05-26 05:49:31,125 INFO 87463 [-/127.0.0.1/-/72ms SCHEDULE /__schedule?path=/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js&type=worker&cron=0%2030%204%20*%20*%20*&disable=false&immediate=false] [egg-multipart:CleanTmpdir] end
+2025-05-26 06:15:15,003 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-26 06:15:15,003 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-26 08:15:38,017 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-26 08:15:38,018 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-26 09:34:32,008 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-26 09:34:32,020 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-26 09:47:02,750 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-26 09:47:02,750 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-26 10:52:35,297 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
