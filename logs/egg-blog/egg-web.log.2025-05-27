@@ -1,0 +1,45 @@
+2025-05-27 00:06:51,945 INFO 87463 [egg-logrotator] app logger reload: got log-reload message
+2025-05-27 01:07:59,954 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 01:07:59,974 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 03:08:26,550 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 03:08:26,554 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 05:02:18,389 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 05:02:18,396 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 05:02:18,579 INFO 87463 [-/127.0.0.1/-/27ms SCHEDULE /__schedule?path=/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js&type=worker&cron=0%2030%204%20*%20*%20*&disable=false&immediate=false] [egg-multipart:CleanTmpdir] start clean tmpdir: "/var/folders/g4/92hbzfzs2ds26wptp4my4j0r0000gn/T/egg-multipart-tmp/egg-blog"
+2025-05-27 05:02:18,791 INFO 87463 [-/127.0.0.1/-/243ms SCHEDULE /__schedule?path=/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js&type=worker&cron=0%2030%204%20*%20*%20*&disable=false&immediate=false] [egg-multipart:CleanTmpdir] end
+2025-05-27 06:54:31,376 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 06:54:31,379 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 08:51:38,125 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 08:51:38,143 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 10:52:46,117 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 10:52:46,123 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 11:53:53,242 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 11:53:53,250 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 12:55:01,281 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 12:55:01,296 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 13:53:36,342 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 13:53:36,363 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 13:56:08,423 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 13:56:08,427 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 14:05:51,134 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 14:05:51,143 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 14:57:10,579 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 14:57:10,579 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 15:07:34,535 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 15:07:34,536 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 15:58:12,551 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 15:58:12,551 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 16:23:32,300 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 16:23:32,300 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 21:42:12,321 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 21:42:12,348 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 22:43:19,951 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 22:43:19,955 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-27 23:20:41,034 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-27 23:20:41,042 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-28 01:20:54,981 WARN 87463 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2025-05-28 01:20:55,082 WARN 87463 [ClusterClient:Watcher] follower closed, and try to init it again
+2025-05-28 01:20:55,633 INFO 87463 [-/127.0.0.1/-/391ms SCHEDULE /__schedule?path=/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/clean_log.js&type=worker&cron=0%200%20*%20*%20*] [egg-logrotator] start remove /Users/zuohuaihan/Desktop/归档/z-blog-server/logs/egg-blog files: common-error.log.2025-04-26, egg-agent.log.2025-04-26, egg-blog-web.log.2025-04-26, egg-schedule.log.2025-04-26, egg-web.log.2025-04-26
+2025-05-28 01:20:55,689 INFO 87463 [-/127.0.0.1/-/438ms SCHEDULE /__schedule?path=/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/clean_log.js&type=worker&cron=0%200%20*%20*%20*] [egg-logrotator] clean all log before 31 days
+2025-05-28 01:20:55,693 INFO 87463 [-/127.0.0.1/-/359ms SCHEDULE /__schedule?path=/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js&type=worker&cron=1%200%200%20*%20*%20*] [egg-logrotator] broadcast log-reload
+2025-05-28 01:20:55,695 INFO 87463 [-/127.0.0.1/-/360ms SCHEDULE /__schedule?path=/Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-logrotator/app/schedule/rotate_by_file.js&type=worker&cron=1%200%200%20*%20*%20*] [egg-logrotator] rotate files success by DayRotator, files ["/Users/zuohuaihan/Desktop/归档/z-blog-server/logs/egg-blog/common-error.log -> /Users/zuohuaihan/Desktop/归档/z-blog-server/logs/egg-blog/common-error.log.2025-05-27","/Users/zuohuaihan/Desktop/归档/z-blog-server/logs/egg-blog/egg-blog-web.log -> /Users/zuohuaihan/Desktop/归档/z-blog-server/logs/egg-blog/egg-blog-web.log.2025-05-27","/Users/zuohuaihan/Desktop/归档/z-blog-server/logs/egg-blog/egg-web.log -> /Users/zuohuaihan/Desktop/归档/z-blog-server/logs/egg-blog/egg-web.log.2025-05-27","/Users/zuohuaihan/Desktop/归档/z-blog-server/logs/egg-blog/egg-schedule.log -> /Users/zuohuaihan/Desktop/归档/z-blog-server/logs/egg-blog/egg-schedule.log.2025-05-27","/Users/zuohuaihan/Desktop/归档/z-blog-server/logs/egg-blog/egg-agent.log -> /Users/zuohuaihan/Desktop/归档/z-blog-server/logs/egg-blog/egg-agent.log.2025-05-27"]

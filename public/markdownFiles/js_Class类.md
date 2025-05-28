@@ -1,5 +1,5 @@
 ---
-title: js中的Class类
+title: Js中的Class类
 description: 为了更好的实现面向对象编程，降低代码的冗余度，es6推出了class类的概念。他实际上是一种语法糖，本质上利用的还是原型和构造函数的概念
 date: 2025-02-23
 tags: [技术点滴, 前端开发, JavaScript]
