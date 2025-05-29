@@ -1,5 +1,5 @@
 ---
-title: Js中的继承
+title: JS中的继承
 description: JavaScript】继承的实现方式详解
 date: 2024-12-23
 tags: [技术点滴, 前端开发, JavaScript]

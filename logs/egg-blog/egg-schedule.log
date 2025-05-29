@@ -1,3 +1,3 @@
-2025-05-28 05:21:27,055 INFO 87463 [Job#17483808870299980035160519608] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js executing by app
-2025-05-28 05:21:27,245 INFO 87463 [Job#17483808870299980035160519608] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js execute succeed, used 185ms. 
-2025-05-28 05:21:27,056 INFO 56417 [Timer] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 83312960ms at 2025-05-29 04:30:00.015
+2025-05-29 06:01:07,825 INFO 56417 [Timer] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 80932393ms at 2025-05-30 04:30:00.208
+2025-05-29 06:01:07,818 INFO 87463 [Job#174846966759310867844700868369] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js executing by app
+2025-05-29 06:01:08,039 INFO 87463 [Job#174846966759310867844700868369] /Users/zuohuaihan/Desktop/归档/z-blog-server/node_modules/egg-multipart/app/schedule/clean_tmpdir.js execute succeed, used 212ms. 
